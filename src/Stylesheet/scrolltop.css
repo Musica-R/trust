@@ -1,0 +1,91 @@
+.bct-stt {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 900;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--bct-green, #1f3d2b);
+    color: var(--bct-gold, #d9a441);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: 0 10px 26px rgba(20, 41, 29, .35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(24px) scale(.85);
+    transition: opacity .35s ease, transform .35s cubic-bezier(.2, .7, .2, 1), visibility .35s, background .25s;
+}
+
+.bct-stt-show {
+    opacity: 1;
+    visibility: visible;
+    transform: none
+}
+
+.bct-stt:hover {
+    background: var(--bct-deep, #14291d);
+    transform: translateY(-4px)
+}
+
+.bct-stt:focus-visible {
+    outline: 2px dashed var(--bct-gold, #d9a441);
+    outline-offset: 3px
+}
+
+.bct-stt-ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg)
+}
+
+.bct-stt-track {
+    fill: none;
+    stroke: rgba(255, 255, 255, .18);
+    stroke-width: 3
+}
+
+.bct-stt-bar {
+    fill: none;
+    stroke: var(--bct-gold, #d9a441);
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dashoffset .15s linear
+}
+
+.bct-stt-ico {
+    position: relative;
+    font-size: 16px;
+    transition: transform .3s
+}
+
+.bct-stt:hover .bct-stt-ico {
+    transform: translateY(-3px)
+}
+
+@media (max-width:520px) {
+    .bct-stt {
+        right: 16px;
+        bottom: 16px;
+        width: 46px;
+        height: 46px
+    }
+
+    .bct-stt-ico {
+        font-size: 14px
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+    .bct-stt,
+    .bct-stt-bar,
+    .bct-stt-ico {
+        transition: none
+    }
+}

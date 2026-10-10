@@ -1,0 +1,11 @@
+.bct-foot{background:#14291d;color:#dfe8e0;padding:56px 24px 0}
+.bct-foot-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1.4fr;gap:40px}
+.bct-foot-brand{display:flex;gap:10px;align-items:center;font-family:var(--bct-head);font-size:1.2rem;color:#e0a62b}
+.bct-foot-motto{font-style:italic;margin:14px 0 8px}
+.bct-foot-links,.bct-foot-contact{display:flex;flex-direction:column;gap:10px}
+.bct-foot a,.bct-foot span{color:#dfe8e0;text-decoration:none;display:flex;gap:10px;align-items:flex-start}
+.bct-foot a:hover{color:#e0a62b}
+.bct-foot-bottom{margin-top:40px;padding:18px 0;border-top:1px solid rgba(255,255,255,.12);text-align:center;font-size:.85rem;opacity:.75}
+@media (max-width:768px){.bct-foot-grid{grid-template-columns:1fr 1fr}.bct-foot-grid>div:first-child{grid-column:1/-1}}
+@media (max-width:520px){.bct-foot{padding:44px 18px 0}.bct-foot-grid{grid-template-columns:1fr;gap:28px}}
+@media (max-width:320px){.bct-foot{padding:36px 12px 0;font-size:.9rem}}
