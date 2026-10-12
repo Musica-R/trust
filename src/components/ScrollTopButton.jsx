@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { FaArrowUp } from "react-icons/fa";
+import { FaArrowUp, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
+import { trust } from "../data/content"; // <-- adjust this path to where your content file lives
 import "../Stylesheet/scrolltop.css";
 
 const R = 22;
 const C = 2 * Math.PI * R;
+
+const digits = trust.phone.replace(/\D/g, ""); // "918714560216"
+const WA_LINK = `https://wa.me/${digits}?text=${encodeURIComponent(
+  "Hello, I would like to know more about Olappamanna Bhagavathi Charitable Trust."
+)}`;
+const TEL_LINK = `tel:${trust.phone}`;
 
 export default function ScrollTopButton() {
   const [show, setShow] = useState(false);
@@ -32,30 +39,57 @@ export default function ScrollTopButton() {
   }, []);
 
   const goTop = () => {
-    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduce =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, left: 0, behavior: reduce ? "instant" : "smooth" });
   };
 
   return (
-    <button
-      type="button"
-      className={`bct-stt ${show ? "bct-stt-show" : ""}`}
-      onClick={goTop}
-      aria-label="Scroll to top"
-      tabIndex={show ? 0 : -1}
-    >
-      <svg className="bct-stt-ring" viewBox="0 0 52 52" aria-hidden="true">
-        <circle className="bct-stt-track" cx="26" cy="26" r={R} />
-        <circle
-          className="bct-stt-bar"
-          cx="26"
-          cy="26"
-          r={R}
-          strokeDasharray={C}
-          strokeDashoffset={C * (1 - prog)}
-        />
-      </svg>
-      <FaArrowUp className="bct-stt-ico" />
-    </button>
+    <div className="bct-fab">
+      {/* Scroll to top (appears after scrolling) */}
+      <button
+        type="button"
+        className={`bct-stt ${show ? "bct-stt-show" : ""}`}
+        onClick={goTop}
+        aria-label="Scroll to top"
+        tabIndex={show ? 0 : -1}
+      >
+        <svg className="bct-stt-ring" viewBox="0 0 52 52" aria-hidden="true">
+          <circle className="bct-stt-track" cx="26" cy="26" r={R} />
+          <circle
+            className="bct-stt-bar"
+            cx="26"
+            cy="26"
+            r={R}
+            strokeDasharray={C}
+            strokeDashoffset={C * (1 - prog)}
+          />
+        </svg>
+        <FaArrowUp className="bct-stt-ico" />
+      </button>
+
+      {/* Call */}
+      <a
+        className="bct-fab-btn bct-fab-call"
+        href={TEL_LINK}
+        aria-label="Call us"
+        title="Call us"
+      >
+        <FaPhoneAlt />
+      </a>
+
+      {/* WhatsApp */}
+      <a
+        className="bct-fab-btn bct-fab-wa"
+        href={WA_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        title="Chat on WhatsApp"
+      >
+        <FaWhatsapp />
+      </a>
+    </div>
   );
 }

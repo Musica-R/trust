@@ -1,8 +1,82 @@
-.bct-stt {
+/* ---------- Floating stack (WhatsApp, Call, Scroll-top) ---------- */
+.bct-fab {
     position: fixed;
     right: 24px;
     bottom: 24px;
     z-index: 900;
+    width: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* WhatsApp + Call buttons */
+.bct-fab-btn {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 10px 26px rgba(20, 41, 29, .3);
+    transition: transform .3s cubic-bezier(.2, .7, .2, 1), box-shadow .3s, background .25s;
+}
+
+.bct-fab-btn:hover {
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 14px 30px rgba(20, 41, 29, .4);
+}
+
+.bct-fab-btn:focus-visible {
+    outline: 2px dashed var(--bct-gold, #d9a441);
+    outline-offset: 3px;
+}
+
+.bct-fab-wa {
+    background: #25d366;
+    font-size: 28px;
+}
+
+.bct-fab-wa:hover {
+    background: #1ebe5b;
+}
+
+/* soft pulse ring on WhatsApp */
+.bct-fab-wa::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid #25d366;
+    opacity: 0;
+    animation: bct-pulse 2.4s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes bct-pulse {
+    0%   { transform: scale(1);   opacity: .6; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.bct-fab-call {
+    background: var(--bct-green, #1f3d2b);
+    color: var(--bct-gold, #d9a441);
+    font-size: 20px;
+}
+
+.bct-fab-call:hover {
+    background: var(--bct-deep, #14291d);
+}
+
+/* ---------- Scroll to top (sits above the stack) ---------- */
+.bct-stt {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 12px);
     width: 52px;
     height: 52px;
     padding: 0;
@@ -68,12 +142,31 @@
     transform: translateY(-3px)
 }
 
+/* ---------- Mobile ---------- */
 @media (max-width:520px) {
-    .bct-stt {
+    .bct-fab {
         right: 16px;
         bottom: 16px;
         width: 46px;
-        height: 46px
+        gap: 10px;
+    }
+
+    .bct-fab-btn,
+    .bct-stt {
+        width: 46px;
+        height: 46px;
+    }
+
+    .bct-stt {
+        bottom: calc(100% + 10px);
+    }
+
+    .bct-fab-wa {
+        font-size: 25px;
+    }
+
+    .bct-fab-call {
+        font-size: 18px;
     }
 
     .bct-stt-ico {
@@ -81,11 +174,17 @@
     }
 }
 
+/* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion:reduce) {
 
     .bct-stt,
     .bct-stt-bar,
-    .bct-stt-ico {
+    .bct-stt-ico,
+    .bct-fab-btn {
         transition: none
+    }
+
+    .bct-fab-wa::after {
+        animation: none
     }
 }
