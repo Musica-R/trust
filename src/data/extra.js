@@ -1,4 +1,4 @@
-export const trusteeEn = ["O. M. C. Neelakandan Namboothiripad","G. P. Priyadath","O. M. Vasudevan","O. M. Ajayakumar","O. M. Hari","O. V. Narayanan","Bindu, P. K.","O. M. Rakesh","M. D. Mani","K. P. Balan Namboothiri","R. S. Ashok Kumar","C. A. Manju","K. M. Pradeep"];
+export const trusteeEn = ["O. M. C. Neelakandan Namboothiripad","G. P. Priyadath","O. M. Vasudevan","O. M. Ajayakumar","O. M. Hari","O. V. Narayanan","Bindu, P. K.","O. M. Rakesh","M. D. Mani","K. P. Balan Namboothiri","R. S. Ashok Kumar","C. A. Baiju","K. M. Pradeep"];
 
 export const extra = {
   en: {
@@ -65,7 +65,7 @@ export const extra = {
     },
     trustees: {
       title: "ഞങ്ങളുടെ ട്രസ്റ്റി അംഗങ്ങൾ", sub: "ട്രസ്റ്റിനെ നയിക്കുന്നവർ.", lead: "ട്രസ്റ്റിന് പിന്നിലെ പ്രത്യേക മുൻകൈ",
-      names: ["ഒ.എം.സി. നീലകണ്ഠൻ നമ്പൂതിരിപ്പാട്","ജി.പി. പ്രിയദത്ത്","ഒ.എം. വാസുദേവൻ","ഒ.എം. അജയകുമാർ","ഒ.എം. ഹരി","ഒ.വി. നാരായണൻ","ബിന്ദു പി.കെ.","ഒ.എം. രാകേഷ്","എം.ഡി. മണി","കെ.പി. ബാലൻ നമ്പൂതിരി","ആർ.എസ്. അശോക് കുമാർ","സി.എ. മഞ്ജു","കെ.എം. പ്രദീപ്"],
+      names: ["ഒ.എം.സി. നീലകണ്ഠൻ നമ്പൂതിരിപ്പാട്","ജി.പി. പ്രിയദത്ത്","ഒ.എം. വാസുദേവൻ","ഒ.എം. അജയകുമാർ","ഒ.എം. ഹരി","ഒ.വി. നാരായണൻ","ബിന്ദു പി.കെ.","ഒ.എം. രാകേഷ്","എം.ഡി. മണി","കെ.പി. ബാലൻ നമ്പൂതിരി","ആർ.എസ്. അശോക് കുമാർ","സി.എ. ബൈജു","കെ.എം. പ്രദീപ്"],
     },
     homeMore: {
       plansTitle: "ഞങ്ങളുടെ പരിചരണ കേന്ദ്രങ്ങൾ",

@@ -1349,6 +1349,8 @@
   transform: none
 }
 
+
+
 /* slower timing for the directional reveals (gallery tiles, dialysis + old age cards) */
 @media (prefers-reduced-motion:no-preference) {
 
@@ -1389,5 +1391,307 @@
   .bct-reveal[class*="bct-from-"],
   .bct-stagger[class*="bct-from-"] .bct-stagger-item {
     transform: none
+  }
+}
+
+/* ---------- temple support highlight (20% hundial income) ---------- */
+.bct-tp {
+  background: #fff
+}
+
+.bct-tp-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 44px;
+  align-items: center;
+  padding: 44px 48px;
+  border-radius: 6px 90px 6px 90px;
+  background: linear-gradient(120deg, var(--bct-deep, #14291d), var(--bct-green));
+  border: 2px solid var(--bct-gold);
+  box-shadow: 0 24px 56px rgba(20, 41, 29, .28);
+  color: #fff;
+  overflow: hidden;
+  opacity: 0
+}
+
+.bct-tp-card::before {
+  content: "";
+  position: absolute;
+  right: -90px;
+  top: -90px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 2px dashed rgba(224, 166, 43, .35);
+  pointer-events: none
+}
+
+.bct-tp-card.bct-in {
+  opacity: 1;
+  animation: bct-tp-in 1.2s cubic-bezier(.22, .8, .25, 1) backwards
+}
+
+@keyframes bct-tp-in {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(.96)
+  }
+
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
+.bct-tp-ring {
+  position: relative;
+  width: 230px;
+  height: 230px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: var(--bct-gold);
+  color: var(--bct-deep, #14291d);
+  border: 8px solid rgba(255, 255, 255, .85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .3)
+}
+
+.bct-tp-ring::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  border: 2px solid var(--bct-gold);
+  opacity: 0;
+  animation: bct-ring 3s ease-out infinite;
+  pointer-events: none
+}
+
+.bct-tp-ring b {
+  font-family: var(--bct-head);
+  font-size: 4.2rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums
+}
+
+.bct-tp-ring span {
+  margin-top: 6px;
+  padding: 0 24px;
+  font-size: .92rem;
+  font-weight: 600;
+  line-height: 1.3
+}
+
+.bct-tp-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(224, 166, 43, .18);
+  border: 1px solid var(--bct-gold);
+  color: var(--bct-gold);
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .04em
+}
+
+.bct-tp-title {
+  margin: 0 0 14px;
+  font-size: 2rem;
+  line-height: 1.25;
+  color: #fff
+}
+
+.bct-tp-text {
+  margin: 0 0 18px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, .9)
+}
+
+.bct-tp-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 0;
+  padding: 14px 18px;
+  border-left: 4px solid var(--bct-gold);
+  background: rgba(255, 255, 255, .08);
+  border-radius: 0 12px 12px 0;
+  font-size: .95rem;
+  line-height: 1.6;
+  color: #fff
+}
+
+.bct-tp-note svg {
+  flex: none;
+  margin-top: 4px;
+  color: var(--bct-gold)
+}
+
+/* ---------- quotes (Gandhi + Wilde) ---------- */
+.bct-qt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px
+}
+
+.bct-qt-card {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 44px 34px 28px;
+  background: #fff;
+  border: 1px solid #dbe5dc;
+  border-top: 5px solid var(--bct-gold);
+  border-radius: 6px 60px 6px 60px;
+  box-shadow: 0 10px 26px rgba(20, 41, 29, .08);
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s, box-shadow .3s
+}
+
+.bct-qt-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 44px rgba(20, 41, 29, .16)
+}
+
+.bct-qt-mark {
+  position: absolute;
+  top: -24px;
+  left: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--bct-green);
+  color: var(--bct-gold);
+  border: 4px solid var(--bct-gold);
+  font-size: 18px
+}
+
+.bct-qt-card blockquote {
+  flex: 1;
+  margin: 0 0 18px;
+  font-family: var(--bct-head);
+  font-size: 1.3rem;
+  line-height: 1.55;
+  color: var(--bct-green)
+}
+
+.bct-qt-card figcaption {
+  padding-top: 14px;
+  border-top: 1px dashed #b9c9bc;
+  font-weight: 600;
+  color: var(--bct-lamp)
+}
+
+@media (max-width:1024px) {
+  .bct-tp-card {
+    grid-template-columns: 210px 1fr;
+    gap: 30px;
+    padding: 36px 32px
+  }
+
+  .bct-tp-ring {
+    width: 200px;
+    height: 200px
+  }
+
+  .bct-tp-ring b {
+    font-size: 3.6rem
+  }
+}
+
+@media (max-width:768px) {
+  .bct-tp-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 36px 24px;
+    border-radius: 6px 60px 6px 60px
+  }
+
+  .bct-tp-note {
+    text-align: left
+  }
+
+  .bct-tp-title {
+    font-size: 1.6rem
+  }
+
+  .bct-qt-grid {
+    grid-template-columns: 1fr
+  }
+}
+
+@media (max-width:520px) {
+  .bct-tp-ring {
+    width: 180px;
+    height: 180px
+  }
+
+  .bct-tp-ring b {
+    font-size: 3.1rem
+  }
+
+  .bct-tp-ring span {
+    font-size: .82rem;
+    padding: 0 18px
+  }
+
+  .bct-tp-title {
+    font-size: 1.4rem
+  }
+
+  .bct-tp-text {
+    font-size: .98rem
+  }
+
+  .bct-qt-card {
+    padding: 40px 22px 22px;
+    border-radius: 6px 40px 6px 40px
+  }
+
+  .bct-qt-card blockquote {
+    font-size: 1.1rem
+  }
+}
+
+@media (max-width:320px) {
+  .bct-tp-card {
+    padding: 28px 16px
+  }
+
+  .bct-tp-ring {
+    width: 150px;
+    height: 150px;
+    border-width: 6px
+  }
+
+  .bct-tp-ring b {
+    font-size: 2.5rem
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .bct-tp-card {
+    opacity: 1
+  }
+
+  .bct-tp-card.bct-in,
+  .bct-tp-ring::after {
+    animation: none
+  }
+
+  .bct-qt-card {
+    transition: none
   }
 }

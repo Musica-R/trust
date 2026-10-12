@@ -29,6 +29,23 @@ export const content = {
       appealTitle: "Your small contribution can bring hope to a family.",
       appealText: "Each month we give bedridden patients a food kit with about 10 kg of rice and 10 essential household provisions, worth around ₹800.",
     },
+    homeTemple: {
+      tag: "Temple support",
+      pct: "20%",
+      pctLabel: "of hundial income",
+      title: "Our temple stands behind our service",
+      text: "Thiru Kunnappulli Bhagavathy Temple contributes 20% of its hundial (offering box) income to the Charitable Trust to support its operations and charitable activities.",
+      note: "Every offering made at the temple also helps care for patients in need.",
+    },
+    homeQuotes: {
+      items: [
+        ["“The best way to find yourself is to lose yourself in the service of others.”", "Mahatma Gandhi"],
+        ["“The smallest act of kindness is worth more than the grandest intention.”", "Oscar Wilde"],
+      ],
+    },
+    aboutQuote: {
+      text: "True charity is giving as a duty, without expecting anything in return.",
+    },
     about: {
       title: "About the Trust",
       sub: "Founded in 2022 at Thiru Kunnappullikkavu, Ezhakkad.",
@@ -40,6 +57,10 @@ export const content = {
       officeTitle: "Office bearers",
       office: [["President", "O.M.C. Neelakandan Namboothirippad, Palappuram"], ["Convener", "K.M. Pradeep, Sreevalsam Punathil House, Ezhakkad - 678 631"], ["Treasurer", "K.C. Venugopal, Pallikurup P.O., Mannarkkad - 678 582"]],
       thanks: "We sincerely thank everyone who has helped us, and we ask kind-hearted people to keep offering their support, cooperation and suggestions.",
+    },
+    actQuotes: {
+      first: "A little kindness can change someone’s entire world.",
+      second: "The whole world is one family.",
     },
     act: {
       title: "Our Activities", sub: "Regular help for poor, helpless and bedridden patients.",
@@ -97,6 +118,23 @@ export const content = {
       appealTitle: "നിങ്ങളുടെ ചെറിയ സംഭാവന ഒരു കുടുംബത്തിന് പ്രതീക്ഷയാകും.",
       appealText: "ഓരോ മാസവും കിടപ്പുരോഗികൾക്ക് ഏകദേശം 10 കിലോ അരിയും 10 തരം അവശ്യ വീട്ടുസാധനങ്ങളും അടങ്ങിയ, ഏകദേശം ₹800 വിലയുള്ള ഭക്ഷ്യക്കിറ്റ് നൽകുന്നു.",
     },
+    homeTemple: {
+      tag: "ക്ഷേത്രത്തിന്റെ പിന്തുണ",
+      pct: "20%",
+      pctLabel: "ഹുണ്ടിയൽ വരുമാനം",
+      title: "ഞങ്ങളുടെ സേവനത്തിന് ക്ഷേത്രത്തിന്റെ കരുത്ത്",
+      text: "തിരു കുന്നപ്പുള്ളി ഭഗവതി ക്ഷേത്രം ഹുണ്ടിയൽ (ഭണ്ഡാരം) വരുമാനത്തിന്റെ 20% ചാരിറ്റബിൾ ട്രസ്റ്റിന്റെ പ്രവർത്തനങ്ങൾക്കും ജീവകാരുണ്യ പ്രവർത്തനങ്ങൾക്കുമായി സംഭാവന ചെയ്യുന്നു.",
+      note: "ക്ഷേത്രത്തിൽ സമർപ്പിക്കുന്ന ഓരോ വഴിപാടും ആവശ്യക്കാരായ രോഗികളുടെ പരിചരണത്തിനും സഹായമാകുന്നു.",
+    },
+    homeQuotes: {
+      items: [
+        ["“മറ്റുള്ളവരെ സേവിക്കുന്നതിലൂടെ സ്വയം കണ്ടെത്തുന്നതാണ് സ്വയം കണ്ടെത്താനുള്ള ഏറ്റവും നല്ല മാർഗം.”", "മഹാത്മാ ഗാന്ധി"],
+        ["“ഏറ്റവും വലിയ ഉദ്ദേശ്യത്തേക്കാൾ വിലപ്പെട്ടതാണ് ഏറ്റവും ചെറിയ ദയാപ്രവൃത്തിപോലും.”", "ഓസ്കാർ വൈൽഡ്"],
+      ],
+    },
+    aboutQuote: {
+      text: "പ്രതിഫലമൊന്നും പ്രതീക്ഷിക്കാതെ, കടമയെന്ന ബോധത്തോടെ നൽകുന്നതാണ് യഥാർത്ഥ ദാനം.",
+    },
     about: {
       title: "ട്രസ്റ്റിനെക്കുറിച്ച്",
       sub: "2022-ൽ തിരുകുന്നപ്പുള്ളിക്കാവ്, എഴക്കാട് സ്ഥാപിതം.",
@@ -108,6 +146,10 @@ export const content = {
       officeTitle: "ഭാരവാഹികൾ",
       office: [["പ്രസിഡന്റ്", "ഒ.എം.സി. നീലകണ്ഠൻ നമ്പൂതിരിപ്പാട്, പാലപ്പുറം"], ["കൺവീനർ", "കെ.എം. പ്രദീപ്, ശ്രീവത്സം പുനത്തിൽ ഹൗസ്, എഴക്കാട് - 678 631"], ["ട്രഷറർ", "കെ.സി. വേണുഗോപാൽ, പള്ളിക്കുറുപ്പ് പി.ഒ., മണ്ണാർക്കാട് - 678 582"]],
       thanks: "ഞങ്ങളെ സഹായിച്ച എല്ലാവരോടും ആത്മാർഥമായി നന്ദി പറയുന്നു. സന്മനസ്സുള്ളവർ തുടർന്നും പിന്തുണയും സഹകരണവും നിർദേശങ്ങളും നൽകണമെന്ന് അഭ്യർഥിക്കുന്നു.",
+    },
+    actQuotes: {
+      first: "ഒരു ചെറിയ കാരുണ്യപ്രവൃത്തി ഒരാളുടെ ലോകം മുഴുവൻ മാറ്റിമറിച്ചേക്കാം.",
+      second: "ലോകം മുഴുവൻ ഒരു കുടുംബമാണ്.",
     },
     act: {
       title: "ഞങ്ങളുടെ പ്രവർത്തനങ്ങൾ", sub: "നിർധനരും നിസ്സഹായരുമായ കിടപ്പുരോഗികൾക്ക് സ്ഥിരമായ സഹായം.",

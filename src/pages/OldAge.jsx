@@ -25,19 +25,7 @@ export default function OldAge() {
     <>
       <PageHero image={img.oldAge} title={o.title} sub={o.sub} />
 
-      {/* Stats strip */}
-      <section className="bct-oa-stats">
-        <div className="bct-oa-stats-in">
-          {x.stats.map(([n, l], i) => (
-            <Reveal key={`${lang}-s${i}`} delay={i * 120} className="bct-oa-stat">
-              <b>{n}</b>
-              <span>{l}</span>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* Our plan */}
+       {/* Our plan */}
       <section className="bct-sec">
         <div className="bct-wrap bct-split">
           <Reveal><img className="bct-pic" src="/assets/trust14.jpeg" alt="" loading="lazy" onError={onImgError} /></Reveal>

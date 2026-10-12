@@ -1,5 +1,5 @@
 import React from "react";
-import { FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome, FaCheckCircle } from "react-icons/fa";
+import { FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome, FaCheckCircle, FaQuoteLeft, FaQuoteRight, FaHandHoldingHeart, FaGlobeAsia } from "react-icons/fa";
 import { useLang } from "../context/LangContext";
 import { img } from "../data/images";
 import { trust } from "../data/content";
@@ -11,8 +11,9 @@ const icons = [FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome]
 const rupee = (n) => "₹" + n.toLocaleString("en-IN");
 
 export default function Activities() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const a = t.act;
+  const q = t.actQuotes || {};
   return (
     <>
       <PageHero image={img.activities} title={a.title} sub={a.sub} />
@@ -31,6 +32,22 @@ export default function Activities() {
           </Stagger>
         </div>
       </section>
+
+      {/* Highlight quote 1: A little kindness */}
+      {q.first && (
+        <section className="bct-aq">
+          <div className="bct-wrap">
+            <Reveal className="bct-aq-card">
+              <span className="bct-aq-badge"><FaQuoteLeft /></span>
+              <AnimText key={`aq1-${lang}`} text={q.first} className="bct-aq-text" step={45} />
+              <div className="bct-aq-divider" aria-hidden="true">
+                <span /><FaHandHoldingHeart /><span />
+              </div>
+              <FaQuoteRight className="bct-aq-end" aria-hidden="true" />
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       <section className="bct-sec bct-sec-tint">
         <div className="bct-wrap bct-split">
@@ -56,6 +73,22 @@ export default function Activities() {
           </div>
         </div>
       </section>
+
+      {/* Highlight quote 2: One family */}
+      {q.second && (
+        <section className="bct-aq bct-aq-b">
+          <div className="bct-wrap">
+            <Reveal className="bct-aq-card">
+              <span className="bct-aq-badge"><FaQuoteLeft /></span>
+              <AnimText key={`aq2-${lang}`} text={q.second} className="bct-aq-text" step={45} />
+              <div className="bct-aq-divider" aria-hidden="true">
+                <span /><FaGlobeAsia /><span />
+              </div>
+              <FaQuoteRight className="bct-aq-end" aria-hidden="true" />
+            </Reveal>
+          </div>
+        </section>
+      )}
     </>
   );
 }

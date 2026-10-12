@@ -476,6 +476,166 @@
   background: #0f1c14
 }
 
+/* ---------- about: highlight quote (true charity) ---------- */
+.bct-aq {
+  padding: 40px 0 88px
+}
+
+.bct-aq-card {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 72px 56px 44px;
+  text-align: center;
+  color: #fff;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(224, 166, 43, .18), transparent 45%),
+    linear-gradient(135deg, var(--bct-deep, #14291d), var(--bct-green));
+  border: 2px solid var(--bct-gold);
+  border-radius: 6px 90px 6px 90px;
+  box-shadow: 0 26px 60px rgba(20, 41, 29, .3);
+  overflow: hidden
+}
+
+.bct-aq-card::before {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -80px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 2px dashed rgba(224, 166, 43, .35);
+  pointer-events: none
+}
+
+.bct-aq-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--bct-gold);
+  color: var(--bct-deep, #14291d);
+  border: 5px solid #fff;
+  font-size: 24px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .3);
+  animation: bct-aq-glow 3s ease-in-out infinite
+}
+
+.bct-aq-card .bct-aq-text {
+  margin: 0 auto;
+  max-width: 740px;
+  font-family: var(--bct-head);
+  font-size: 2rem;
+  line-height: 1.5;
+  color: #fff
+}
+
+.bct-aq-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 30px auto 0;
+  max-width: 280px;
+  color: var(--bct-gold);
+  font-size: 22px
+}
+
+.bct-aq-divider span {
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--bct-gold))
+}
+
+.bct-aq-divider span:last-child {
+  background: linear-gradient(270deg, transparent, var(--bct-gold))
+}
+
+.bct-aq-end {
+  position: absolute;
+  right: 36px;
+  bottom: 26px;
+  font-size: 34px;
+  color: rgba(224, 166, 43, .35)
+}
+
+@keyframes bct-aq-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .3), 0 0 0 0 rgba(224, 166, 43, .5)
+  }
+
+  50% {
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .3), 0 0 0 14px rgba(224, 166, 43, 0)
+  }
+}
+
+@media (max-width:768px) {
+  .bct-aq {
+    padding: 32px 0 60px
+  }
+
+  .bct-aq-card {
+    padding: 64px 28px 36px;
+    border-radius: 6px 60px 6px 60px
+  }
+
+  .bct-aq-card .bct-aq-text {
+    font-size: 1.6rem
+  }
+}
+
+@media (max-width:520px) {
+  .bct-aq {
+    padding: 28px 0 48px
+  }
+
+  .bct-aq-card {
+    padding: 58px 20px 30px;
+    border-radius: 6px 40px 6px 40px
+  }
+
+  .bct-aq-card .bct-aq-text {
+    font-size: 1.3rem
+  }
+
+  .bct-aq-end {
+    right: 18px;
+    bottom: 16px;
+    font-size: 24px
+  }
+}
+
+@media (max-width:320px) {
+  .bct-aq-card {
+    padding: 54px 14px 26px
+  }
+
+  .bct-aq-card .bct-aq-text {
+    font-size: 1.15rem
+  }
+
+  .bct-aq-badge {
+    width: 54px;
+    height: 54px;
+    font-size: 20px
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .bct-aq-badge {
+    animation: none
+  }
+}
+
 @media (max-width:768px) {
   .bct-vid-grid {
     grid-template-columns: 1fr;
@@ -675,5 +835,22 @@
 
   .bct-bank-row {
     padding: 10px
+  }
+}
+
+/* ---------- activities: second quote band spacing ---------- */
+.bct-aq-b {
+  padding: 88px 0
+}
+
+@media (max-width:768px) {
+  .bct-aq-b {
+    padding: 60px 0
+  }
+}
+
+@media (max-width:520px) {
+  .bct-aq-b {
+    padding: 48px 0
   }
 }

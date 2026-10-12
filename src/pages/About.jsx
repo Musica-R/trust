@@ -1,5 +1,5 @@
 import React from "react";
-import { FaUserTie } from "react-icons/fa";
+import { FaUserTie, FaQuoteLeft, FaQuoteRight, FaHandHoldingHeart } from "react-icons/fa";
 import { useLang } from "../context/LangContext";
 import { img } from "../data/images";
 import { trust } from "../data/content";
@@ -9,8 +9,9 @@ import Trustees from "../components/Trustees";
 import "../Stylesheet/pages.css";
 
 export default function About() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const a = t.about;
+  const q = t.aboutQuote || {};
   return (
     <>
       <PageHero image={img.about} title={a.title} sub={a.sub} />
@@ -24,6 +25,23 @@ export default function About() {
           <Reveal><img className="bct-pic" src="/assets/trust17.jpeg" alt="" loading="lazy" /></Reveal>
         </div>
       </section>
+
+      {/* Highlight quote: True charity */}
+      {q.text && (
+        <section className="bct-aq">
+          <div className="bct-wrap">
+            <Reveal className="bct-aq-card">
+              <span className="bct-aq-badge"><FaQuoteLeft /></span>
+              <AnimText key={`aq-${lang}`} text={q.text} className="bct-aq-text" step={45} />
+              <div className="bct-aq-divider" aria-hidden="true">
+                <span /><FaHandHoldingHeart /><span />
+              </div>
+              <FaQuoteRight className="bct-aq-end" aria-hidden="true" />
+            </Reveal>
+          </div>
+        </section>
+      )}
+
       <section className="bct-sec bct-sec-tint">
         <div className="bct-wrap">
           <AnimText as="h2" text={a.officeTitle} className="bct-h2" step={90} />

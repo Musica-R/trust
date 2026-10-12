@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome, FaArrowRight, FaWind, FaBed, FaProcedures, FaWalking, FaLeaf, FaQuoteLeft, FaChevronLeft, FaChevronRight, FaCheckCircle } from "react-icons/fa";
+import { FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome, FaArrowRight, FaWind, FaBed, FaProcedures, FaWalking, FaLeaf, FaQuoteLeft, FaChevronLeft, FaChevronRight, FaCheckCircle, FaPlaceOfWorship, FaHandHoldingHeart } from "react-icons/fa";
 import { useLang } from "../context/LangContext";
 import { img, helpImgs, homeGallery } from "../data/images";
 import { trust } from "../data/content";
@@ -247,6 +247,8 @@ export default function Home() {
   const { t, lang } = useLang();
   const h = t.home;
   const m = t.homeMore || {};
+  const tp = t.homeTemple || {};
+  const qt = t.homeQuotes || { items: [] };
   const [tab, setTab] = useState(0);
 
   const onImgError = (e) => {
@@ -294,6 +296,26 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Temple support: highlighted band (20% of hundial income) */}
+      {tp.title && (
+        <section className="bct-sec bct-tp">
+          <div className="bct-wrap">
+            <InView key={`tp-${lang}`} className="bct-tp-card" threshold={0.25}>
+              <div className="bct-tp-ring">
+                <CountUp value={tp.pct} />
+                <span>{tp.pctLabel}</span>
+              </div>
+              <div className="bct-tp-txt">
+                <span className="bct-tp-tag"><FaPlaceOfWorship /> {tp.tag}</span>
+                <AnimText key={`tpt-${lang}`} as="h2" text={tp.title} className="bct-tp-title" step={80} />
+                <AnimText key={`tpx-${lang}`} text={tp.text} className="bct-tp-text" step={28} />
+                <p className="bct-tp-note"><FaHandHoldingHeart /> {tp.note}</p>
+              </div>
+            </InView>
+          </div>
+        </section>
+      )}
 
       {/* How we help: image cards in a scroll-snap rail */}
       <section className="bct-sec bct-sec-tint">
@@ -420,6 +442,23 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      {/* Quotes: Gandhi + Wilde */}
+      {qt.items.length > 0 && (
+        <section className="bct-sec bct-sec-tint bct-qt">
+          <div className="bct-wrap">
+            <Stagger key={`qt-${lang}`} className="bct-qt-grid" step={260} from="bottom">
+              {qt.items.map(([text, who]) => (
+                <figure key={who} className="bct-qt-card">
+                  <span className="bct-qt-mark"><FaQuoteLeft /></span>
+                  <blockquote>{text}</blockquote>
+                  <figcaption>— {who}</figcaption>
+                </figure>
+              ))}
+            </Stagger>
+          </div>
+        </section>
+      )}
 
       <section className="bct-appeal" style={{ backgroundImage: `linear-gradient(rgba(31,61,43,.9),rgba(31,61,43,.9)),url(${img.support})` }}>
         <div className="bct-wrap bct-appeal-in">
