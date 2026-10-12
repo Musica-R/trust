@@ -52,7 +52,7 @@ export default function Dialysis() {
             <AnimText key={`pt-${lang}`} text={d.plan} className="bct-body" step={30} />
             <Reveal><Link to="/contact" className="bct-btn bct-btn-green">{d.cta}</Link></Reveal>
           </div>
-          <Reveal><img className="bct-pic" src={img.dialysis} alt="" loading="lazy" /></Reveal>
+          <Reveal><img className="bct-pic" src="/assets/trust11.jpeg" alt="" loading="lazy" /></Reveal>
         </div>
       </section>
 
@@ -83,7 +83,7 @@ export default function Dialysis() {
       <section className="bct-sec">
         <div className="bct-wrap bct-split bct-dx-why">
           <Reveal>
-            <img className="bct-pic" src={helpImgs[4] || img.hero} alt="" loading="lazy" onError={onImgError} />
+            <img className="bct-pic" src="/assets/trust4.jpeg" alt="" loading="lazy" onError={onImgError} />
           </Reveal>
           <div>
             <AnimText key={`w-${lang}`} as="h2" text={x.whyTitle} className="bct-h2" step={90} />

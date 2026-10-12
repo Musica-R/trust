@@ -14,6 +14,83 @@ const eqIcons = [FaWind, FaWheelchair, FaBed, FaProcedures, FaTint, FaWalking];
 const rupee = (n) => "₹" + n.toLocaleString("en-IN");
 const pad = (n) => String(n).padStart(2, "0");
 
+const prefersReduced = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- adds "bct-in" once the element scrolls into view (runs once) ---------- */
+function InView({ as: Tag = "div", className = "", threshold = 0.2, children, ...rest }) {
+  const ref = useRef(null);
+  const [on, setOn] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+    if (!("IntersectionObserver" in window)) { setOn(true); return undefined; }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) { setOn(true); io.disconnect(); }
+      },
+      { threshold }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [threshold]);
+
+  return (
+    <Tag ref={ref} className={`${className} ${on ? "bct-in" : ""}`} {...rest}>
+      {children}
+    </Tag>
+  );
+}
+
+/* ---------- impact numbers count up when visible ---------- */
+function CountUp({ value }) {
+  const str = String(value);
+  const m = str.match(/\d[\d,]*/);
+  const ref = useRef(null);
+  const target = m ? parseInt(m[0].replace(/,/g, ""), 10) : 0;
+  const [n, setN] = useState(m && !prefersReduced() ? 0 : target);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!m || !el || prefersReduced()) return undefined;
+    let raf = 0;
+    const run = () => {
+      const start = performance.now();
+      const dur = 2000;
+      const tick = (now) => {
+        const p = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        setN(Math.round(target * eased));
+        if (p < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    };
+    if (!("IntersectionObserver" in window)) { setN(target); return undefined; }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) { run(); io.disconnect(); }
+      },
+      { threshold: 0.6 }
+    );
+    io.observe(el);
+    return () => { io.disconnect(); cancelAnimationFrame(raf); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [target]);
+
+  if (!m) return <b ref={ref}>{value}</b>;
+  const shown = m[0].includes(",") ? n.toLocaleString("en-IN") : String(n);
+  return (
+    <b ref={ref}>
+      {str.slice(0, m.index)}
+      {shown}
+      {str.slice(m.index + m[0].length)}
+    </b>
+  );
+}
+
 /* ---------- "How we help": scroll-snap rail with image cards ---------- */
 function HelpRail({ items }) {
   const rail = useRef(null);
@@ -192,21 +269,21 @@ export default function Home() {
       </section>
 
       <section className="bct-impact">
-        <Stagger key={`i-${lang}`} className="bct-impact-grid" step={150}>
+        <Stagger key={`i-${lang}`} className="bct-impact-grid" step={200}>
           {h.impact.map(([n, l]) => (
-            <div key={l} className="bct-impact-item"><b>{n}</b><span>{l}</span></div>
+            <div key={l} className="bct-impact-item"><CountUp value={n} /><span>{l}</span></div>
           ))}
         </Stagger>
       </section>
 
-      {/* Story: overlapping photo collage + pull quote */}
+      {/* Story: photos slide in left to right + pull quote */}
       <section className="bct-sec bct-story">
         <div className="bct-wrap bct-story-grid">
-          <Reveal className="bct-collage">
+          <InView key={`co-${lang}`} className="bct-collage bct-lr" threshold={0.25}>
             <img className="bct-collage-a" src="/assets/trust3.jpeg" alt="" loading="lazy" />
             <img className="bct-collage-b" src="/assets/trust21.jpeg" alt="" loading="lazy" />
             <div className="bct-collage-badge"><b>{trust.reg}</b><span>{t.reg}</span></div>
-          </Reveal>
+          </InView>
           <div>
             <AnimText key={`st-${lang}`} as="h2" text={t.story.title} className="bct-h2" step={90} />
             <AnimText key={`sx-${lang}`} text={t.story.text} className="bct-body" step={30} />
@@ -230,16 +307,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Equipment profile cards */}
+      {/* Equipment profile cards: first 3 drop from the top, next 3 rise from the bottom */}
       <section className="bct-sec bct-eq">
         <div className="bct-wrap">
           <AnimText key={`e-${lang}`} as="h2" text={t.equipHome.title} className="bct-h2" step={90} />
           <AnimText key={`es-${lang}`} text={t.equipHome.sub} className="bct-lead" step={40} />
-          <Stagger key={`eg-${lang}`} className="bct-eq-grid" step={130}>
+          <InView key={`eg-${lang}`} className="bct-eq-grid" threshold={0.1}>
             {t.act.equip.map((name, i) => {
               const Icon = eqIcons[i];
               return (
-                <article key={name} className="bct-eq-card">
+                <article
+                  key={name}
+                  className={`bct-eq-card ${i < 3 ? "bct-eq-top" : "bct-eq-bot"}`}
+                  style={{ "--n": i }}
+                >
                   <span className="bct-eq-ico"><Icon /></span>
                   <h3>{name}</h3>
                   <p>{t.equipDesc[i]}</p>
@@ -250,7 +331,7 @@ export default function Home() {
                 </article>
               );
             })}
-          </Stagger>
+          </InView>
         </div>
       </section>
 
@@ -266,7 +347,7 @@ export default function Home() {
               </button>
             ))}
           </div>
-          <Stagger key={tab + lang} className="bct-jr" step={110}>
+          <Stagger key={tab + lang} className="bct-jr" step={150}>
             {t.journal.items[tab].map((text) => (
               <div key={text} className="bct-jr-item"><span className="bct-jr-dot" /><p>{text}</p></div>
             ))}
@@ -276,12 +357,12 @@ export default function Home() {
 
       <Trustees />
 
-      {/* Dialysis Centre + Old Age Home */}
+      {/* Dialysis Centre + Old Age Home: cards come in from the left, one after the other */}
       <section className="bct-sec bct-sec-tint bct-ex">
         <div className="bct-wrap">
           <AnimText key={`pt-${lang}`} as="h2" text={m.plansTitle} className="bct-h2" step={90} />
           <AnimText key={`ps-${lang}`} text={m.plansSub} className="bct-lead" step={40} />
-          <Stagger key={`pg-${lang}`} className="bct-ex-grid" step={170}>
+          <Stagger key={`pg-${lang}`} className="bct-ex-grid" step={230} from="left">
             {/* Dialysis */}
             <article className="bct-ex-card">
               <div className="bct-ex-pic">
@@ -326,7 +407,7 @@ export default function Home() {
           <AnimText key={`gs-${lang}`} text={m.gallerySub} className="bct-lead" step={40} />
           <div className="bct-gl-grid">
             {homeGallery.map((src, i) => (
-              <Reveal key={src} delay={i * 110} className={`bct-gl-cell bct-gl-c${i}`}>
+              <Reveal key={src} from="left" delay={i * 150} className={`bct-gl-cell bct-gl-c${i}`}>
                 <Link to="/gallery" className="bct-gl-tile" aria-label={t.gal.title}>
                   <img src={src} alt="" loading="lazy" onError={onImgError} />
                   <span className="bct-gl-over"><FaArrowRight /></span>

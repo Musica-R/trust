@@ -40,7 +40,7 @@ export default function OldAge() {
       {/* Our plan */}
       <section className="bct-sec">
         <div className="bct-wrap bct-split">
-          <Reveal><img className="bct-pic" src={img.oldAge} alt="" loading="lazy" onError={onImgError} /></Reveal>
+          <Reveal><img className="bct-pic" src="/assets/trust14.jpeg" alt="" loading="lazy" onError={onImgError} /></Reveal>
           <div>
             <AnimText key={`p-${lang}`} as="h2" text={o.planTitle} className="bct-h2" step={90} />
             <AnimText key={`pt-${lang}`} text={o.plan} className="bct-body" step={30} />

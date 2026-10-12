@@ -21,7 +21,7 @@ export default function About() {
             <p className="bct-regline">{t.reg}: {trust.reg}</p>
             <p className="bct-motto">“{t.motto}”</p>
           </div>
-          <Reveal><img className="bct-pic" src={img.about} alt="" loading="lazy" /></Reveal>
+          <Reveal><img className="bct-pic" src="/assets/trust17.jpeg" alt="" loading="lazy" /></Reveal>
         </div>
       </section>
       <section className="bct-sec bct-sec-tint">
