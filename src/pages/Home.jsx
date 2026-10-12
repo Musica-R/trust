@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome, FaArrowRight, FaWind, FaBed, FaProcedures, FaWalking, FaLeaf, FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome, FaArrowRight, FaWind, FaBed, FaProcedures, FaWalking, FaLeaf, FaQuoteLeft, FaChevronLeft, FaChevronRight, FaCheckCircle } from "react-icons/fa";
 import { useLang } from "../context/LangContext";
-import { img, helpImgs } from "../data/images";
+import { img, helpImgs, homeGallery } from "../data/images";
 import { trust } from "../data/content";
 import Trustees from "../components/Trustees";
 import { AnimText, Stagger, Reveal } from "../components/Reveal";
@@ -167,15 +167,23 @@ function HelpRail({ items }) {
 }
 
 export default function Home() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const h = t.home;
+  const m = t.homeMore || {};
   const [tab, setTab] = useState(0);
+
+  const onImgError = (e) => {
+    if (e.currentTarget.dataset.fb) return;
+    e.currentTarget.dataset.fb = "1";
+    e.currentTarget.src = img.hero;
+  };
+
   return (
     <>
       <section className="bct-hero" style={{ backgroundImage: `linear-gradient(105deg,rgba(20,41,29,.9),rgba(20,41,29,.45)),url(${"/assets/trust16.jpeg"})` }}>
         <div className="bct-wrap bct-hero-in">
-          <AnimText as="h1" text={h.title} step={110} />
-          <AnimText text={h.sub} className="bct-hero-sub" step={45} />
+          <AnimText key={`t-${lang}`} as="h1" text={h.title} step={110} />
+          <AnimText key={`s-${lang}`} text={h.sub} className="bct-hero-sub" step={45} />
           <Reveal delay={600} className="bct-btns">
             <Link to="/contact" className="bct-btn bct-btn-gold">{h.donate}</Link>
             <Link to="/about" className="bct-btn bct-btn-line">{h.learn}</Link>
@@ -184,7 +192,7 @@ export default function Home() {
       </section>
 
       <section className="bct-impact">
-        <Stagger className="bct-impact-grid" step={150}>
+        <Stagger key={`i-${lang}`} className="bct-impact-grid" step={150}>
           {h.impact.map(([n, l]) => (
             <div key={l} className="bct-impact-item"><b>{n}</b><span>{l}</span></div>
           ))}
@@ -200,9 +208,9 @@ export default function Home() {
             <div className="bct-collage-badge"><b>{trust.reg}</b><span>{t.reg}</span></div>
           </Reveal>
           <div>
-            <AnimText as="h2" text={t.story.title} className="bct-h2" step={90} />
-            <AnimText text={t.story.text} className="bct-body" step={30} />
-            <Stagger className="bct-story-pts" step={160}>
+            <AnimText key={`st-${lang}`} as="h2" text={t.story.title} className="bct-h2" step={90} />
+            <AnimText key={`sx-${lang}`} text={t.story.text} className="bct-body" step={30} />
+            <Stagger key={`sp-${lang}`} className="bct-story-pts" step={160}>
               {t.story.points.map((p) => <p key={p}><FaLeaf /> {p}</p>)}
             </Stagger>
             <p className="bct-quote"><FaQuoteLeft /> {t.motto}</p>
@@ -213,9 +221,9 @@ export default function Home() {
       {/* How we help: image cards in a scroll-snap rail */}
       <section className="bct-sec bct-sec-tint">
         <div className="bct-wrap">
-          <AnimText as="h2" text={h.whatTitle} className="bct-h2" step={90} />
-          <AnimText text={h.whatSub} className="bct-lead" step={40} />
-          <HelpRail items={t.act.items} />
+          <AnimText key={`w-${lang}`} as="h2" text={h.whatTitle} className="bct-h2" step={90} />
+          <AnimText key={`ws-${lang}`} text={h.whatSub} className="bct-lead" step={40} />
+          <HelpRail key={lang} items={t.act.items} />
           <Reveal className="bct-center">
             <Link to="/activities" className="bct-more">{h.moreLink} <FaArrowRight /></Link>
           </Reveal>
@@ -225,9 +233,9 @@ export default function Home() {
       {/* Equipment profile cards */}
       <section className="bct-sec bct-eq">
         <div className="bct-wrap">
-          <AnimText as="h2" text={t.equipHome.title} className="bct-h2" step={90} />
-          <AnimText text={t.equipHome.sub} className="bct-lead" step={40} />
-          <Stagger className="bct-eq-grid" step={130}>
+          <AnimText key={`e-${lang}`} as="h2" text={t.equipHome.title} className="bct-h2" step={90} />
+          <AnimText key={`es-${lang}`} text={t.equipHome.sub} className="bct-lead" step={40} />
+          <Stagger key={`eg-${lang}`} className="bct-eq-grid" step={130}>
             {t.act.equip.map((name, i) => {
               const Icon = eqIcons[i];
               return (
@@ -249,8 +257,8 @@ export default function Home() {
       {/* Activity journal with tabs */}
       <section className="bct-sec bct-sec-tint">
         <div className="bct-wrap">
-          <AnimText as="h2" text={t.journal.title} className="bct-h2" step={90} />
-          <AnimText text={t.journal.sub} className="bct-lead" step={40} />
+          <AnimText key={`j-${lang}`} as="h2" text={t.journal.title} className="bct-h2" step={90} />
+          <AnimText key={`js-${lang}`} text={t.journal.sub} className="bct-lead" step={40} />
           <div className="bct-tabs" role="tablist">
             {t.journal.tabs.map((name, i) => (
               <button key={name} role="tab" aria-selected={tab === i} className={`bct-tab ${tab === i ? "bct-tab-on" : ""}`} onClick={() => setTab(i)}>
@@ -258,7 +266,7 @@ export default function Home() {
               </button>
             ))}
           </div>
-          <Stagger key={tab + t.journal.tabs[0]} className="bct-jr" step={110}>
+          <Stagger key={tab + lang} className="bct-jr" step={110}>
             {t.journal.items[tab].map((text) => (
               <div key={text} className="bct-jr-item"><span className="bct-jr-dot" /><p>{text}</p></div>
             ))}
@@ -268,10 +276,74 @@ export default function Home() {
 
       <Trustees />
 
+      {/* Dialysis Centre + Old Age Home */}
+      <section className="bct-sec bct-sec-tint bct-ex">
+        <div className="bct-wrap">
+          <AnimText key={`pt-${lang}`} as="h2" text={m.plansTitle} className="bct-h2" step={90} />
+          <AnimText key={`ps-${lang}`} text={m.plansSub} className="bct-lead" step={40} />
+          <Stagger key={`pg-${lang}`} className="bct-ex-grid" step={170}>
+            {/* Dialysis */}
+            <article className="bct-ex-card">
+              <div className="bct-ex-pic">
+                <img src={helpImgs[4] || img.hero} alt={t.dia.title} loading="lazy" onError={onImgError} />
+                <span className="bct-ex-ico"><FaTint /></span>
+              </div>
+              <div className="bct-ex-body">
+                <h3>{t.dia.title}</h3>
+                <p>{t.dia.plan}</p>
+                <h4>{m.today}</h4>
+                <ul className="bct-ex-list">
+                  {t.dia.now.map((p) => <li key={p}><FaCheckCircle /> <span>{p}</span></li>)}
+                </ul>
+                <Link to="/dialysis-centre" className="bct-ex-link">{m.explore} <FaArrowRight /></Link>
+              </div>
+            </article>
+
+            {/* Old age home */}
+            <article className="bct-ex-card">
+              <div className="bct-ex-pic">
+                <img src={helpImgs[5] || img.hero} alt={t.old.title} loading="lazy" onError={onImgError} />
+                <span className="bct-ex-ico"><FaHome /></span>
+              </div>
+              <div className="bct-ex-body">
+                <h3>{t.old.title}</h3>
+                <p>{t.old.plan}</p>
+                <h4>{m.firstStep}</h4>
+                <ul className="bct-ex-list">
+                  <li><FaCheckCircle /> <span>{t.old.land}</span></li>
+                </ul>
+                <Link to="/old-age-home" className="bct-ex-link">{m.explore} <FaArrowRight /></Link>
+              </div>
+            </article>
+          </Stagger>
+        </div>
+      </section>
+
+      {/* Gallery preview: 5 separate photos from the gallery set (see homeGallery in data/images.js) */}
+      <section className="bct-sec bct-gl">
+        <div className="bct-wrap">
+          <AnimText key={`gt-${lang}`} as="h2" text={m.galleryTitle} className="bct-h2" step={90} />
+          <AnimText key={`gs-${lang}`} text={m.gallerySub} className="bct-lead" step={40} />
+          <div className="bct-gl-grid">
+            {homeGallery.map((src, i) => (
+              <Reveal key={src} delay={i * 110} className={`bct-gl-cell bct-gl-c${i}`}>
+                <Link to="/gallery" className="bct-gl-tile" aria-label={t.gal.title}>
+                  <img src={src} alt="" loading="lazy" onError={onImgError} />
+                  <span className="bct-gl-over"><FaArrowRight /></span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="bct-center">
+            <Link to="/gallery" className="bct-more">{m.galleryLink} <FaArrowRight /></Link>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="bct-appeal" style={{ backgroundImage: `linear-gradient(rgba(31,61,43,.9),rgba(31,61,43,.9)),url(${img.support})` }}>
         <div className="bct-wrap bct-appeal-in">
-          <AnimText as="h2" text={h.appealTitle} step={100} />
-          <AnimText text={h.appealText} step={40} />
+          <AnimText key={`at-${lang}`} as="h2" text={h.appealTitle} step={100} />
+          <AnimText key={`ax-${lang}`} text={h.appealText} step={40} />
           <Reveal delay={400}><Link to="/contact" className="bct-btn bct-btn-gold">{h.donate}</Link></Reveal>
         </div>
       </section>

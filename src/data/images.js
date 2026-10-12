@@ -35,3 +35,8 @@ export const gallery = Array.from(
   { length: GALLERY_COUNT },
   (_, i) => trust(i + 1)
 );
+
+
+const HOME_GALLERY_NUMBERS = [21, 6, 10, 14, 19];
+
+export const homeGallery = HOME_GALLERY_NUMBERS.map(trust);

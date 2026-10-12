@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX, FiGlobe } from "react-icons/fi";
+import { useLang } from "../context/LangContext";
 import "../Stylesheet/Navbar.css";
 
 const LINKS = [
@@ -24,24 +25,10 @@ const BRAND = {
   },
 };
 
-/**
- * Props (optional):
- *   lang     - "en" | "ml"
- *   setLang  - function(lang)
- * If you already keep language in a Context / App state, pass it in.
- * Otherwise the navbar manages it itself and saves it in localStorage.
- */
-export default function Navbar({ lang: langProp, setLang: setLangProp }) {
-  const [localLang, setLocalLang] = useState(() => {
-    try {
-      return localStorage.getItem("bct-lang") || "en";
-    } catch {
-      return "en";
-    }
-  });
-
-  const lang = langProp ?? localLang;
-  const setLang = setLangProp ?? setLocalLang;
+/* Language is shared through LangContext, so every page switches together.
+   LangContext already saves the choice and sets <html lang>. */
+export default function Navbar() {
+  const { lang, setLang } = useLang();
 
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -60,16 +47,6 @@ export default function Navbar({ lang: langProp, setLang: setLangProp }) {
     setOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
-
-  // Persist language + set <html lang>
-  useEffect(() => {
-    document.documentElement.lang = lang;
-    try {
-      localStorage.setItem("bct-lang", lang);
-    } catch {
-      /* ignore */
-    }
-  }, [lang]);
 
   // Close menu with Escape
   useEffect(() => {
@@ -121,6 +98,7 @@ export default function Navbar({ lang: langProp, setLang: setLangProp }) {
 
         {/* Tools */}
         <div className="bct-nav-tools">
+
           <button
             type="button"
             className="bct-lang"

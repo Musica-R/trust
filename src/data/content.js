@@ -38,7 +38,7 @@ export const content = {
         "We work with government palliative care centres, primary healthcare institutions, doctors and health inspectors in the Kongad and Mundur panchayats.",
       ],
       officeTitle: "Office bearers",
-      office: [["President", "Namboothirippad, Palappuram"], ["Convener", "K.M. Pradeep, Sreevalsam Punathil House, Ezhakkad - 678 631"], ["Treasurer", "K.C. Venugopal, Pallikurup P.O., Mannarkkad - 678 582"]],
+      office: [["President", "O.M.C. Neelakandan Namboothirippad, Palappuram"], ["Convener", "K.M. Pradeep, Sreevalsam Punathil House, Ezhakkad - 678 631"], ["Treasurer", "K.C. Venugopal, Pallikurup P.O., Mannarkkad - 678 582"]],
       thanks: "We sincerely thank everyone who has helped us, and we ask kind-hearted people to keep offering their support, cooperation and suggestions.",
     },
     act: {
@@ -106,7 +106,7 @@ export const content = {
         "കോങ്ങാട്, മുണ്ടൂർ പഞ്ചായത്തുകളിലെ സർക്കാർ പാലിയേറ്റീവ് കേന്ദ്രങ്ങൾ, പ്രാഥമികാരോഗ്യ സ്ഥാപനങ്ങൾ, ഡോക്ടർമാർ, ഹെൽത്ത് ഇൻസ്പെക്ടർമാർ എന്നിവരുമായി സഹകരിച്ചാണ് ഞങ്ങൾ പ്രവർത്തിക്കുന്നത്.",
       ],
       officeTitle: "ഭാരവാഹികൾ",
-      office: [["പ്രസിഡന്റ്", "നമ്പൂതിരിപ്പാട്, പാലപ്പുറം"], ["കൺവീനർ", "കെ.എം. പ്രദീപ്, ശ്രീവത്സം പുനത്തിൽ ഹൗസ്, എഴക്കാട് - 678 631"], ["ട്രഷറർ", "കെ.സി. വേണുഗോപാൽ, പള്ളിക്കുറുപ്പ് പി.ഒ., മണ്ണാർക്കാട് - 678 582"]],
+      office: [["പ്രസിഡന്റ്", "ഒ.എം.സി. നീലകണ്ഠൻ നമ്പൂതിരിപ്പാട്, പാലപ്പുറം"], ["കൺവീനർ", "കെ.എം. പ്രദീപ്, ശ്രീവത്സം പുനത്തിൽ ഹൗസ്, എഴക്കാട് - 678 631"], ["ട്രഷറർ", "കെ.സി. വേണുഗോപാൽ, പള്ളിക്കുറുപ്പ് പി.ഒ., മണ്ണാർക്കാട് - 678 582"]],
       thanks: "ഞങ്ങളെ സഹായിച്ച എല്ലാവരോടും ആത്മാർഥമായി നന്ദി പറയുന്നു. സന്മനസ്സുള്ളവർ തുടർന്നും പിന്തുണയും സഹകരണവും നിർദേശങ്ങളും നൽകണമെന്ന് അഭ്യർഥിക്കുന്നു.",
     },
     act: {

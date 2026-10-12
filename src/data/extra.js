@@ -27,6 +27,16 @@ export const extra = {
       ],
     },
     trustees: { title: "Our trustees", sub: "The people who guide the trust.", lead: "Special initiative behind the trust" },
+    homeMore: {
+      plansTitle: "Our care centres",
+      plansSub: "Two projects we are working towards, with your help.",
+      explore: "Explore",
+      today: "What we do today",
+      firstStep: "A first step",
+      galleryTitle: "Moments from our work",
+      gallerySub: "A glimpse of food kits, medical support and outings with our patients.",
+      galleryLink: "View full gallery",
+    },
   },
   ml: {
     story: {
@@ -56,6 +66,16 @@ export const extra = {
     trustees: {
       title: "ഞങ്ങളുടെ ട്രസ്റ്റി അംഗങ്ങൾ", sub: "ട്രസ്റ്റിനെ നയിക്കുന്നവർ.", lead: "ട്രസ്റ്റിന് പിന്നിലെ പ്രത്യേക മുൻകൈ",
       names: ["ഒ.എം.സി. നീലകണ്ഠൻ നമ്പൂതിരിപ്പാട്","ജി.പി. പ്രിയദത്ത്","ഒ.എം. വാസുദേവൻ","ഒ.എം. അജയകുമാർ","ഒ.എം. ഹരി","ഒ.വി. നാരായണൻ","ബിന്ദു പി.കെ.","ഒ.എം. രാകേഷ്","എം.ഡി. മണി","കെ.പി. ബാലൻ നമ്പൂതിരി","ആർ.എസ്. അശോക് കുമാർ","സി.എ. മഞ്ജു","കെ.എം. പ്രദീപ്"],
+    },
+    homeMore: {
+      plansTitle: "ഞങ്ങളുടെ പരിചരണ കേന്ദ്രങ്ങൾ",
+      plansSub: "നിങ്ങളുടെ സഹായത്തോടെ ഞങ്ങൾ ലക്ഷ്യമിടുന്ന രണ്ട് പദ്ധതികൾ.",
+      explore: "കൂടുതൽ അറിയാം",
+      today: "ഇപ്പോൾ ചെയ്യുന്നത്",
+      firstStep: "ആദ്യ ചുവട്",
+      galleryTitle: "ഞങ്ങളുടെ പ്രവർത്തനങ്ങളിലെ നിമിഷങ്ങൾ",
+      gallerySub: "ഭക്ഷ്യക്കിറ്റ്, വൈദ്യസഹായം, രോഗികളോടൊപ്പമുള്ള യാത്രകൾ എന്നിവയുടെ ഒരു നേർക്കാഴ്ച.",
+      galleryLink: "ഗാലറി മുഴുവൻ കാണുക",
     },
   },
 };

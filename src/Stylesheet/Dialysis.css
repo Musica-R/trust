@@ -1,0 +1,272 @@
+/* stats strip */
+.bct-dx-stats {
+  background: var(--bct-gold);
+  color: var(--bct-deep)
+}
+
+.bct-dx-stats-in {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 34px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center
+}
+
+.bct-dx-stat b {
+  display: block;
+  font-family: var(--bct-head);
+  font-size: 2.6rem;
+  line-height: 1.1
+}
+
+.bct-dx-stat span {
+  font-size: .95rem;
+  font-weight: 500
+}
+
+/* card grids */
+.bct-dx-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px
+}
+
+.bct-dx-cell {
+  display: flex;
+  min-width: 0
+}
+
+.bct-dx-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 30px 24px 26px;
+  background: #fff;
+  border: 1px solid #dbe5dc;
+  border-radius: 100px 100px 20px 20px;
+  box-shadow: 0 10px 26px rgba(20, 41, 29, .08);
+  transition: transform .3s, box-shadow .3s
+}
+
+.bct-dx-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 44px rgba(20, 41, 29, .16)
+}
+
+.bct-dx-ico {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--bct-green);
+  color: var(--bct-gold);
+  border: 5px solid var(--bct-gold);
+  display: grid;
+  place-items: center;
+  font-size: 26px
+}
+
+.bct-dx-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  color: var(--bct-green)
+}
+
+.bct-dx-card p {
+  margin: 0;
+  flex: 1;
+  font-size: .96rem;
+  line-height: 1.65
+}
+
+.bct-dx-price {
+  margin-top: 16px;
+  padding-top: 12px;
+  width: 100%;
+  border-top: 1px dashed #b9c9bc;
+  font-family: var(--bct-head);
+  font-size: 1.5rem;
+  color: var(--bct-lamp)
+}
+
+.bct-dx-btn {
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1.5px solid var(--bct-green);
+  color: var(--bct-green);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .25s, color .25s
+}
+
+.bct-dx-btn svg {
+  transition: transform .25s
+}
+
+.bct-dx-btn:hover {
+  background: var(--bct-green);
+  color: var(--bct-gold)
+}
+
+.bct-dx-btn:hover svg {
+  transform: translateX(4px)
+}
+
+/* why section: image left */
+.bct-dx-why {
+  grid-template-columns: 1fr 1.1fr
+}
+
+/* roadmap */
+.bct-dx-road-sec {
+  background: var(--bct-deep);
+  color: #fff
+}
+
+.bct-dx-road-sec .bct-h2 {
+  color: var(--bct-gold)
+}
+
+.bct-dx-road {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px
+}
+
+.bct-dx-road::before {
+  content: "";
+  position: absolute;
+  top: 27px;
+  left: 16%;
+  right: 16%;
+  border-top: 2px dashed rgba(224, 166, 43, .6)
+}
+
+.bct-dx-step {
+  position: relative;
+  text-align: center;
+  padding: 0 10px
+}
+
+.bct-dx-no {
+  position: relative;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--bct-gold);
+  color: var(--bct-deep);
+  display: grid;
+  place-items: center;
+  font-family: var(--bct-head);
+  font-size: 1.5rem;
+  font-weight: 700
+}
+
+.bct-dx-step h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  color: var(--bct-gold)
+}
+
+.bct-dx-step p {
+  margin: 0;
+  line-height: 1.65;
+  opacity: .9
+}
+
+/* note */
+.bct-dx-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 36px 0 0;
+  color: var(--bct-green);
+  font-weight: 500;
+  text-align: center
+}
+
+.bct-dx-note svg {
+  color: var(--bct-gold);
+  flex: none
+}
+
+/* responsive */
+@media (max-width:1024px) {
+  .bct-dx-cards {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media (max-width:768px) {
+  .bct-dx-why {
+    grid-template-columns: 1fr
+  }
+
+  .bct-dx-stats-in {
+    gap: 12px;
+    padding: 28px 18px
+  }
+
+  .bct-dx-stat b {
+    font-size: 2rem
+  }
+
+  .bct-dx-stat span {
+    font-size: .82rem
+  }
+
+  .bct-dx-road {
+    grid-template-columns: 1fr;
+    gap: 34px
+  }
+
+  .bct-dx-road::before {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    border-top: 0;
+    border-left: 2px dashed rgba(224, 166, 43, .6)
+  }
+
+  .bct-dx-step {
+    background: var(--bct-deep);
+    padding: 6px 10px
+  }
+}
+
+@media (max-width:520px) {
+  .bct-dx-cards {
+    grid-template-columns: 1fr
+  }
+
+  .bct-dx-card {
+    border-radius: 80px 80px 18px 18px
+  }
+
+  .bct-dx-stats-in {
+    grid-template-columns: 1fr;
+    padding: 24px 18px
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+  .bct-dx-card,
+  .bct-dx-btn svg {
+    transition: none
+  }
+}

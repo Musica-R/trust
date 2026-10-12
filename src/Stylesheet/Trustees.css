@@ -1,14 +1,176 @@
-.bct-tr{padding:88px 0;background:var(--bct-deep);color:#fff}
-.bct-tr .bct-h2{color:var(--bct-gold)}
-.bct-tr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.bct-tr-card{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid rgba(255,255,255,.16);border-radius:60px 14px 14px 60px;background:rgba(255,255,255,.04);height:100%;transition:background .3s,transform .3s}
-.bct-tr-card:hover{background:rgba(224,166,43,.14);transform:translateX(6px)}
-.bct-tr-av{flex:none;width:52px;height:52px;border-radius:50%;background:var(--bct-gold);color:var(--bct-deep);display:grid;place-items:center;font-family:var(--bct-head);font-weight:700;font-size:1.05rem}
-.bct-tr-card b{font-weight:600;line-height:1.35;min-width:0;word-break:break-word}
-.bct-tr-card small{display:block;color:var(--bct-gold);font-size:.78rem;margin-top:2px}
-.bct-tr-lead{grid-column:span 2;background:rgba(224,166,43,.16);border-color:var(--bct-gold)}
-.bct-tr-lead .bct-tr-av{font-size:2.2rem;background:transparent;color:var(--bct-gold)}
-@media (max-width:1024px){.bct-tr-grid{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:768px){.bct-tr{padding:60px 0}.bct-tr-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.bct-tr{padding:48px 0}.bct-tr-grid{grid-template-columns:1fr}.bct-tr-lead{grid-column:auto}}
-@media (max-width:320px){.bct-tr-card{padding:12px;gap:10px}.bct-tr-av{width:42px;height:42px;font-size:.9rem}}
+.bct-tr {
+  padding: 88px 0;
+  background: var(--bct-deep);
+  color: #fff
+}
+
+.bct-tr .bct-h2 {
+  color: var(--bct-gold)
+}
+
+/* 4 columns: lead trustee on its own full row, then 12 members = 3 even rows */
+.bct-tr-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 8px
+}
+
+.bct-tr-cell {
+  display: flex;
+  min-width: 0
+}
+
+.bct-tr-cell-lead {
+  grid-column: 1 / -1;
+  margin-bottom: 10px
+}
+
+.bct-tr-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 60px 14px 14px 60px;
+  background: rgba(255, 255, 255, .04);
+  transition: background .3s, transform .3s, border-color .3s
+}
+
+.bct-tr-card:hover {
+  background: rgba(224, 166, 43, .14);
+  border-color: rgba(224, 166, 43, .6);
+  transform: translateY(-4px)
+}
+
+.bct-tr-av {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--bct-gold);
+  color: var(--bct-deep);
+  display: grid;
+  place-items: center;
+  font-family: var(--bct-head);
+  font-weight: 700;
+  font-size: 1.05rem
+}
+
+.bct-tr-txt {
+  min-width: 0
+}
+
+.bct-tr-card b {
+  display: block;
+  font-weight: 600;
+  line-height: 1.35;
+  word-break: break-word
+}
+
+.bct-tr-card small {
+  display: block;
+  color: var(--bct-gold);
+  font-size: .78rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 4px
+}
+
+/* featured lead card */
+.bct-tr-lead {
+  justify-content: center;
+  gap: 22px;
+  padding: 22px 34px;
+  border-radius: 90px 18px 90px 18px;
+  border-color: var(--bct-gold);
+  background: rgba(224, 166, 43, .16)
+}
+
+.bct-tr-lead .bct-tr-av {
+  width: 76px;
+  height: 76px;
+  font-size: 3.4rem;
+  background: transparent;
+  color: var(--bct-gold)
+}
+
+.bct-tr-lead b {
+  font-family: var(--bct-head);
+  font-size: 1.5rem
+}
+
+@media (max-width:1024px) {
+  .bct-tr-grid {
+    grid-template-columns: repeat(3, 1fr)
+  }
+}
+
+@media (max-width:768px) {
+  .bct-tr {
+    padding: 60px 0
+  }
+
+  .bct-tr-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px
+  }
+
+  .bct-tr-lead {
+    padding: 18px 22px;
+    border-radius: 70px 16px 70px 16px
+  }
+
+  .bct-tr-lead b {
+    font-size: 1.25rem
+  }
+}
+
+@media (max-width:520px) {
+  .bct-tr {
+    padding: 48px 0
+  }
+
+  .bct-tr-grid {
+    grid-template-columns: 1fr
+  }
+
+  .bct-tr-lead {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 24px 18px;
+    border-radius: 40px 16px 40px 16px
+  }
+
+  .bct-tr-lead .bct-tr-av {
+    width: 64px;
+    height: 64px;
+    font-size: 2.8rem
+  }
+}
+
+@media (max-width:320px) {
+  .bct-tr-card {
+    padding: 12px;
+    gap: 10px
+  }
+
+  .bct-tr-av {
+    width: 42px;
+    height: 42px;
+    font-size: .9rem
+  }
+
+  .bct-tr-lead b {
+    font-size: 1.1rem
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .bct-tr-card {
+    transition: none
+  }
+}
