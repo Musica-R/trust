@@ -3,7 +3,7 @@ export const trusteeEn = ["O. M. C. Neelakandan Namboothiripad","G. P. Priyadath
 export const extra = {
   en: {
     story: {
-      title: "Living together, serving together",
+      title: "On the path of service, through the strength of unity.",
       text: "Our guiding principle is “Living Together and Engaging in Humanitarian Service.” We walk beside palliative care patients and their families, so no one in Mundur and Kongad faces illness alone.",
       points: ["Formed in 2022 at the special initiative of Sri O.M.C. Neelakandan Namboothiripad", "Works with palliative care centres, health institutions and doctors in Kongad and Mundur", "Runs on public donations and the trust's own funds"],
     },
@@ -40,9 +40,9 @@ export const extra = {
   },
   ml: {
     story: {
-      title: "ഒരുമിച്ച് ജീവിച്ച്, ഒരുമിച്ച് സേവിച്ച്",
+      title: "ഒരുമയുടെ കരുത്തിൽ, സേവനത്തിന്റെ പാതയിൽ",
       text: "“ഒരുമിച്ച് ജീവിക്കുക, മാനവസേവനത്തിൽ ഏർപ്പെടുക” എന്നതാണ് ഞങ്ങളുടെ തത്വം. മുണ്ടൂരിലും കോങ്ങാടും ആരും രോഗത്തെ ഒറ്റയ്ക്ക് നേരിടേണ്ടി വരാതിരിക്കാൻ പാലിയേറ്റീവ് രോഗികൾക്കും കുടുംബങ്ങൾക്കും ഒപ്പം ഞങ്ങൾ നിൽക്കുന്നു.",
-      points: ["ശ്രീ ഒ.എം.സി. നീലകണ്ഠൻ നമ്പൂതിരിപ്പാടിന്റെ പ്രത്യേക മുൻകൈയിൽ 2022-ൽ രൂപീകരിച്ചു", "കോങ്ങാട്, മുണ്ടൂർ പ്രദേശങ്ങളിലെ പാലിയേറ്റീവ് കേന്ദ്രങ്ങൾ, ആരോഗ്യ സ്ഥാപനങ്ങൾ, ഡോക്ടർമാർ എന്നിവരുമായി സഹകരിക്കുന്നു", "പൊതുസംഭാവനകളും ട്രസ്റ്റ് ഫണ്ടും കൊണ്ട് പ്രവർത്തിക്കുന്നു"],
+      points: ["ശ്രീ ഒ.എം.സി. നീലകണ്ഠൻ നമ്പൂതിരിപ്പാടിന്റെ പ്രത്യേക നേതൃത്വത്തിൽ 2022-ൽ രൂപീകരിച്ചു", "കോങ്ങാട്, മുണ്ടൂർ പ്രദേശങ്ങളിലെ പാലിയേറ്റീവ് കേന്ദ്രങ്ങൾ, ആരോഗ്യ സ്ഥാപനങ്ങൾ, ഡോക്ടർമാർ എന്നിവരുമായി സഹകരിക്കുന്നു", "പൊതുസംഭാവനകളും ട്രസ്റ്റ് ഫണ്ടും കൊണ്ട് പ്രവർത്തിക്കുന്നു"],
     },
     equipHome: { title: "ഒരു വീടിനെ മാറ്റുന്ന ഉപകരണങ്ങൾ", sub: "വാങ്ങാൻ കഴിയാത്ത രോഗികൾക്കാണ് ഓരോന്നും നൽകുന്നത്. ഒരെണ്ണം നിങ്ങൾക്കും സ്പോൺസർ ചെയ്യാം.", sponsor: "സ്പോൺസർ ചെയ്യൂ" },
     equipDesc: [

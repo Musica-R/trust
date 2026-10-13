@@ -269,14 +269,16 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+      
 
-      <section className="bct-impact">
+      {/* <section className="bct-impact">
         <Stagger key={`i-${lang}`} className="bct-impact-grid" step={200}>
           {h.impact.map(([n, l]) => (
             <div key={l} className="bct-impact-item"><CountUp value={n} /><span>{l}</span></div>
           ))}
         </Stagger>
-      </section>
+      </section> */}
+
 
       {/* Story: photos slide in left to right + pull quote */}
       <section className="bct-sec bct-story">

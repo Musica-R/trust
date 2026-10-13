@@ -6,7 +6,7 @@ import { trust } from "../data/content";
 import "../Stylesheet/Footer.css";
 
 export default function Footer() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <footer className="bct-foot">
       <div className="bct-foot-grid">
@@ -28,7 +28,16 @@ export default function Footer() {
           <a href={`mailto:${trust.email}`}><FaEnvelope /> {trust.email}</a>
         </div>
       </div>
-      <div className="bct-foot-bottom">© {new Date().getFullYear()} {t.brand}</div>
+      <div className="bct-foot-bottom">
+        <div className="bct-foot-copy">© {new Date().getFullYear()} {t.brand}</div>
+        <div className="bct-foot-dev">
+          {lang === "ml" ? (
+            <span>എംപീപ്പിൾസ് വികസിപ്പിച്ചത്</span>
+          ) : (
+            <span>Developed by <strong>Mpeoples</strong></span>
+          )}
+        </div>
+      </div>
     </footer>
   );
 }

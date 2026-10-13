@@ -29,6 +29,7 @@ export default function Contact() {
   return (
     <>
       <PageHero image={img.contact} title={c.title} sub={c.sub} />
+      
       <section className="bct-sec">
         <div className="bct-wrap">
           <Stagger className="bct-cards bct-cards-3" step={140}>
