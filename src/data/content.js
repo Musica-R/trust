@@ -29,6 +29,21 @@ export const content = {
       appealTitle: "Your small contribution can bring hope to a family.",
       appealText: "Each month we give bedridden patients a food kit with about 10 kg of rice and 10 essential household provisions, worth around ₹800.",
     },
+    homeShrine: {
+      tag: "Our temple",
+      title: "Thiru Kunnappulli Bhagavathy Temple",
+      text: "The temple at Thiru Kunnappullikkavu, Ezhakkad is the heart of our community and the home of our charitable work. Devotees come here to pray, and the temple stands behind the Trust in caring for those in need.",
+      facts: [
+        ["Deity", "Goddess Devi (Kunnappulli Amma)"],
+        ["Darshanam", "Facing north"],
+        ["Management", "Administered by Olappamanna Mana, together with a local committee of villagers"],
+      ],
+      festTitle: "Major festivals & rituals",
+      fest: [
+        ["Kummatti", "Malayalam month of Kumbham", "February – March"],
+        ["Vishu Vela", "Malayalam month of Medam", "April – May"],
+      ],
+    },
     homeTemple: {
       tag: "Temple support",
       pct: "20%",
@@ -117,6 +132,21 @@ export const content = {
       moreLink: "എല്ലാ പ്രവർത്തനങ്ങളും കാണുക",
       appealTitle: "നിങ്ങളുടെ ചെറിയ സംഭാവന ഒരു കുടുംബത്തിന് പ്രതീക്ഷയാകും.",
       appealText: "ഓരോ മാസവും കിടപ്പുരോഗികൾക്ക് ഏകദേശം 10 കിലോ അരിയും 10 തരം അവശ്യ വീട്ടുസാധനങ്ങളും അടങ്ങിയ, ഏകദേശം ₹800 വിലയുള്ള ഭക്ഷ്യക്കിറ്റ് നൽകുന്നു.",
+    },
+    homeShrine: {
+      tag: "ഞങ്ങളുടെ ക്ഷേത്രം",
+      title: "തിരു കുന്നപ്പുള്ളി ഭഗവതി ക്ഷേത്രം",
+      text: "എഴക്കാട് തിരുകുന്നപ്പുള്ളിക്കാവിലെ ക്ഷേത്രമാണ് ഞങ്ങളുടെ നാടിന്റെ ഹൃദയവും ജീവകാരുണ്യ പ്രവർത്തനങ്ങളുടെ കേന്ദ്രവും. ഭക്തർ ഇവിടെ പ്രാർഥിക്കാനെത്തുന്നു; ആവശ്യക്കാർക്ക് കരുതലേകുന്ന ട്രസ്റ്റിന് ക്ഷേത്രം താങ്ങായി നിൽക്കുന്നു.",
+      facts: [
+        ["പ്രതിഷ്ഠ", "ദേവി (കുന്നപ്പുള്ളി അമ്മ)"],
+        ["ദർശനം", "വടക്കോട്ട് ദർശനം"],
+        ["ഭരണം", "ഒളപ്പമണ്ണ മനയുടെ ഉടമസ്ഥതയിലും ഭരണത്തിലും, നാട്ടുകാരടങ്ങുന്ന പ്രാദേശിക കമ്മിറ്റിയോടൊപ്പം"],
+      ],
+      festTitle: "പ്രധാന ഉത്സവങ്ങളും ആചാരങ്ങളും",
+      fest: [
+        ["കുമ്മാട്ടി", "മലയാള മാസം കുംഭം", "ഫെബ്രുവരി – മാർച്ച്"],
+        ["വിഷു വേല", "മലയാള മാസം മേടം", "ഏപ്രിൽ – മേയ്"],
+      ],
     },
     homeTemple: {
       tag: "ക്ഷേത്രത്തിന്റെ പിന്തുണ",

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome, FaArrowRight, FaWind, FaBed, FaProcedures, FaWalking, FaLeaf, FaQuoteLeft, FaChevronLeft, FaChevronRight, FaCheckCircle, FaPlaceOfWorship, FaHandHoldingHeart } from "react-icons/fa";
+import { FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome, FaArrowRight, FaWind, FaBed, FaProcedures, FaWalking, FaLeaf, FaQuoteLeft, FaChevronLeft, FaChevronRight, FaCheckCircle, FaPlaceOfWorship, FaHandHoldingHeart, FaPrayingHands, FaCompass, FaUsers, FaCalendarAlt } from "react-icons/fa";
 import { useLang } from "../context/LangContext";
 import { img, helpImgs, homeGallery } from "../data/images";
 import { trust } from "../data/content";
@@ -11,6 +11,7 @@ import "../Stylesheet/home.css";
 
 const icons = [FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome];
 const eqIcons = [FaWind, FaWheelchair, FaBed, FaProcedures, FaTint, FaWalking];
+const shrineIcons = [FaPrayingHands, FaCompass, FaUsers];
 const rupee = (n) => "₹" + n.toLocaleString("en-IN");
 const pad = (n) => String(n).padStart(2, "0");
 
@@ -248,6 +249,7 @@ export default function Home() {
   const h = t.home;
   const m = t.homeMore || {};
   const tp = t.homeTemple || {};
+  const sh = t.homeShrine || {};
   const qt = t.homeQuotes || { items: [] };
   const [tab, setTab] = useState(0);
 
@@ -269,7 +271,6 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
-      
 
       {/* <section className="bct-impact">
         <Stagger key={`i-${lang}`} className="bct-impact-grid" step={200}>
@@ -278,7 +279,6 @@ export default function Home() {
           ))}
         </Stagger>
       </section> */}
-
 
       {/* Story: photos slide in left to right + pull quote */}
       <section className="bct-sec bct-story">
@@ -298,6 +298,41 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* About the temple: deity, darshanam, management + major festivals */}
+      {sh.title && (
+        <section className="bct-sec bct-sh">
+          <div className="bct-wrap">
+            <span className="bct-sh-tag"><FaPlaceOfWorship /> {sh.tag}</span>
+            <AnimText key={`sht-${lang}`} as="h2" text={sh.title} className="bct-h2" step={90} />
+            <AnimText key={`shx-${lang}`} text={sh.text} className="bct-lead" step={36} />
+
+            <Stagger key={`shf-${lang}`} className="bct-sh-facts" step={200} from="bottom">
+              {sh.facts.map(([label, value], i) => {
+                const Icon = shrineIcons[i] || FaPlaceOfWorship;
+                return (
+                  <article key={label} className="bct-sh-fact">
+                    <span className="bct-sh-ico"><Icon /></span>
+                    <h3>{label}</h3>
+                    <p>{value}</p>
+                  </article>
+                );
+              })}
+            </Stagger>
+
+            <h3 className="bct-sh-fest-title"><FaCalendarAlt /> {sh.festTitle}</h3>
+            <Stagger key={`shv-${lang}`} className="bct-sh-fest" step={240} from="left">
+              {sh.fest.map(([name, month, period]) => (
+                <div key={name} className="bct-sh-fest-card">
+                  <b>{name}</b>
+                  <span className="bct-sh-month">{month}</span>
+                  <em>{period}</em>
+                </div>
+              ))}
+            </Stagger>
+          </div>
+        </section>
+      )}
 
       {/* Temple support: highlighted band (20% of hundial income) */}
       {tp.title && (

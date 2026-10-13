@@ -1594,6 +1594,180 @@
   color: var(--bct-lamp)
 }
 
+/* ---------- about the temple (deity, darshanam, management, festivals) ---------- */
+.bct-sh {
+  background: #fff
+}
+
+.bct-sh-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--bct-tint);
+  border: 1px solid var(--bct-gold);
+  color: var(--bct-lamp);
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .04em
+}
+
+.bct-sh-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 8px
+}
+
+.bct-sh-fact {
+  position: relative;
+  height: 100%;
+  padding: 26px 24px 24px;
+  text-align: center;
+  border-radius: 100px 100px 18px 18px;
+  border: 1px solid #dbe5dc;
+  background: linear-gradient(180deg, var(--bct-tint), #fff 60%);
+  transition: transform .3s, box-shadow .3s
+}
+
+.bct-sh-fact:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(20, 41, 29, .14)
+}
+
+.bct-sh-ico {
+  width: 70px;
+  height: 70px;
+  margin: 4px auto 14px;
+  border-radius: 50%;
+  background: var(--bct-green);
+  color: var(--bct-gold);
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  border: 5px solid var(--bct-gold);
+  transition: transform .5s
+}
+
+.bct-sh-fact:hover .bct-sh-ico {
+  transform: rotate(360deg)
+}
+
+.bct-sh-fact h3 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  color: var(--bct-green)
+}
+
+.bct-sh-fact p {
+  margin: 0;
+  font-size: .98rem;
+  line-height: 1.65
+}
+
+.bct-sh-fest-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 44px 0 18px;
+  font-size: 1.4rem;
+  color: var(--bct-green)
+}
+
+.bct-sh-fest-title svg {
+  color: var(--bct-gold)
+}
+
+.bct-sh-fest {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px
+}
+
+.bct-sh-fest-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px 28px;
+  border-radius: 6px 50px 6px 50px;
+  border-left: 5px solid var(--bct-gold);
+  background: linear-gradient(120deg, var(--bct-deep, #14291d), var(--bct-green));
+  color: #fff;
+  box-shadow: 0 14px 32px rgba(20, 41, 29, .2);
+  transition: transform .3s, box-shadow .3s
+}
+
+.bct-sh-fest-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 44px rgba(20, 41, 29, .3)
+}
+
+.bct-sh-fest-card b {
+  font-family: var(--bct-head);
+  font-size: 1.6rem;
+  color: var(--bct-gold)
+}
+
+.bct-sh-month {
+  font-size: .98rem;
+  opacity: .92
+}
+
+.bct-sh-fest-card em {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: rgba(224, 166, 43, .2);
+  border: 1px solid var(--bct-gold);
+  font-style: normal;
+  font-weight: 600;
+  font-size: .88rem
+}
+
+@media (max-width:1024px) {
+  .bct-sh-facts {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media (max-width:768px) {
+  .bct-sh-fest {
+    grid-template-columns: 1fr
+  }
+}
+
+@media (max-width:520px) {
+  .bct-sh-facts {
+    grid-template-columns: 1fr
+  }
+
+  .bct-sh-fact {
+    border-radius: 80px 80px 16px 16px
+  }
+
+  .bct-sh-fest-card {
+    padding: 20px 20px;
+    border-radius: 6px 36px 6px 36px
+  }
+
+  .bct-sh-fest-card b {
+    font-size: 1.35rem
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+  .bct-sh-fact,
+  .bct-sh-ico,
+  .bct-sh-fest-card {
+    transition: none
+  }
+}
+
 @media (max-width:1024px) {
   .bct-tp-card {
     grid-template-columns: 210px 1fr;
