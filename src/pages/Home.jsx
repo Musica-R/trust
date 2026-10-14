@@ -261,7 +261,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="bct-hero" style={{ backgroundImage: `linear-gradient(105deg,rgba(20,41,29,.9),rgba(20,41,29,.45)),url(${"/assets/trust16.jpeg"})` }}>
+      <section className="bct-hero" style={{ backgroundImage: `linear-gradient(105deg,rgba(20,41,29,.9),rgba(20,41,29,.45)),url(${"/assets/new5.jpg"})` }}>
         <div className="bct-wrap bct-hero-in">
           <AnimText key={`t-${lang}`} as="h1" text={h.title} step={110} />
           <AnimText key={`s-${lang}`} text={h.sub} className="bct-hero-sub" step={45} />
