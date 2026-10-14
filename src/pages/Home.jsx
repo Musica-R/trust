@@ -299,13 +299,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About the temple: deity, darshanam, management + major festivals */}
+      {/* About the temple: deity image + intro, then darshanam, management + major festivals */}
       {sh.title && (
         <section className="bct-sec bct-sh">
           <div className="bct-wrap">
-            <span className="bct-sh-tag"><FaPlaceOfWorship /> {sh.tag}</span>
-            <AnimText key={`sht-${lang}`} as="h2" text={sh.title} className="bct-h2" step={90} />
-            <AnimText key={`shx-${lang}`} text={sh.text} className="bct-lead" step={36} />
+            <div className="bct-sh-top">
+              <InView key={`shp-${lang}`} className="bct-sh-pic" threshold={0.25}>
+                <div className="bct-sh-frame">
+                  <img src="/assets/god.jpeg" alt={sh.title} loading="lazy" draggable="false" />
+                </div>
+              </InView>
+
+              <div className="bct-sh-intro">
+                <span className="bct-sh-tag"><FaPlaceOfWorship /> {sh.tag}</span>
+                <AnimText key={`sht-${lang}`} as="h2" text={sh.title} className="bct-h2" step={90} />
+                <AnimText key={`shx-${lang}`} text={sh.text} className="bct-lead" step={36} />
+              </div>
+            </div>
 
             <Stagger key={`shf-${lang}`} className="bct-sh-facts" step={200} from="bottom">
               {sh.facts.map(([label, value], i) => {

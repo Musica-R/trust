@@ -1614,6 +1614,136 @@
   letter-spacing: .04em
 }
 
+/* temple intro: deity image + text */
+.bct-sh-top {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 44px
+}
+
+.bct-sh-intro .bct-lead {
+  margin-bottom: 0
+}
+
+.bct-sh-pic {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  opacity: 0
+}
+
+/* dashed gold ring offset behind the frame */
+.bct-sh-pic::before {
+  content: "";
+  position: absolute;
+  inset: -14px -14px 14px 14px;
+  border: 2px dashed var(--bct-gold);
+  border-radius: 200px 200px 24px 24px;
+  opacity: .6;
+  pointer-events: none
+}
+
+.bct-sh-pic.bct-in {
+  opacity: 1;
+  animation: bct-sh-pic-in 1.3s cubic-bezier(.22, .8, .25, 1) backwards
+}
+
+@keyframes bct-sh-pic-in {
+  from {
+    opacity: 0;
+    transform: translateX(-90px) scale(.94)
+  }
+
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
+.bct-sh-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 200px 200px 22px 22px;
+  border: 6px solid var(--bct-gold);
+  background: var(--bct-tint);
+  box-shadow: 0 22px 50px rgba(20, 41, 29, .28)
+}
+
+.bct-sh-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 41, 29, 0) 60%, rgba(20, 41, 29, .35));
+  pointer-events: none
+}
+
+.bct-sh-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease
+}
+
+.bct-sh-pic:hover .bct-sh-frame img {
+  transform: scale(1.06)
+}
+
+@media (max-width:1024px) {
+  .bct-sh-top {
+    grid-template-columns: 300px 1fr;
+    gap: 40px
+  }
+}
+
+@media (max-width:768px) {
+  .bct-sh-top {
+    grid-template-columns: 1fr;
+    gap: 36px
+  }
+
+  .bct-sh-pic {
+    max-width: 300px
+  }
+
+  .bct-sh-intro {
+    text-align: center
+  }
+}
+
+@media (max-width:520px) {
+  .bct-sh-pic {
+    max-width: 250px
+  }
+
+  .bct-sh-pic::before {
+    inset: -10px -10px 10px 10px
+  }
+
+  .bct-sh-frame {
+    border-width: 5px;
+    border-radius: 140px 140px 18px 18px
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .bct-sh-pic {
+    opacity: 1
+  }
+
+  .bct-sh-pic.bct-in {
+    animation: none
+  }
+
+  .bct-sh-frame img {
+    transition: none
+  }
+}
+
 .bct-sh-facts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
