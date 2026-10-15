@@ -32,7 +32,7 @@ export const content = {
     homeShrine: {
       tag: "Our temple",
       title: "Thiru Kunnappulli Bhagavathy Temple",
-      text: "The temple at Thiru Kunnappullikkavu, Ezhakkad is the heart of our community and the home of our charitable work. Devotees come here to pray, and the temple stands behind the Trust in caring for those in need.",
+      text: "The temple at Thiru Kunnappullikkavu, Kongad is the heart of our community and the home of our charitable work. Devotees come here to pray, and the temple stands behind the Trust in caring for those in need.",
       facts: [
         ["Deity", "Goddess Devi (Kunnappulli Amma)"],
         ["Darshanam", "Facing north"],
@@ -136,7 +136,7 @@ export const content = {
     homeShrine: {
       tag: "ഞങ്ങളുടെ ക്ഷേത്രം",
       title: "തിരു കുന്നപ്പുള്ളി ഭഗവതി ക്ഷേത്രം",
-      text: "എഴക്കാട് തിരുകുന്നപ്പുള്ളിക്കാവിലെ ക്ഷേത്രമാണ് ഞങ്ങളുടെ നാടിന്റെ ഹൃദയവും ജീവകാരുണ്യ പ്രവർത്തനങ്ങളുടെ കേന്ദ്രവും. ഭക്തർ ഇവിടെ പ്രാർഥിക്കാനെത്തുന്നു; ആവശ്യക്കാർക്ക് കരുതലേകുന്ന ട്രസ്റ്റിന് ക്ഷേത്രം താങ്ങായി നിൽക്കുന്നു.",
+      text: "കോങ്ങാട് തിരുകുന്നപ്പുള്ളിക്കാവിലെ ക്ഷേത്രമാണ് ഞങ്ങളുടെ നാടിന്റെ ഹൃദയവും ജീവകാരുണ്യ പ്രവർത്തനങ്ങളുടെ കേന്ദ്രവും. ഭക്തർ ഇവിടെ പ്രാർഥിക്കാനെത്തുന്നു; ആവശ്യക്കാർക്ക് കരുതലേകുന്ന ട്രസ്റ്റിന് ക്ഷേത്രം താങ്ങായി നിൽക്കുന്നു.",
       facts: [
         ["പ്രതിഷ്ഠ", "ദേവി (കുന്നപ്പുള്ളി അമ്മ)"],
         ["ദർശനം", "വടക്കോട്ട് ദർശനം"],

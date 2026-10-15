@@ -54,7 +54,7 @@ export default function Gallery() {
 
   return (
     <>
-      <PageHero image={img.gallery} title={t.gal.title} sub={t.gal.sub} />
+      <PageHero image="/assets/trust12.jpeg" title={t.gal.title} sub={t.gal.sub} />
 
       {/* ---------- Photos ---------- */}
       <section className="bct-sec bct-sec-tint">

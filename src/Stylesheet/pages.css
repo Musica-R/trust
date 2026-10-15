@@ -151,6 +151,110 @@
   max-width: 760px
 }
 
+/* ---------- contact: UPI QR donation ---------- */
+.bct-qr {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 48px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #dbe5dc;
+  border-top: 4px solid var(--bct-gold);
+  border-radius: 6px 60px 6px 60px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(20, 41, 29, .12)
+}
+
+.bct-qr-img {
+  background: #fff;
+  border: 2px solid var(--bct-gold);
+  border-radius: 6px 36px 6px 36px;
+  padding: 12px;
+  box-shadow: 0 12px 30px rgba(20, 41, 29, .15)
+}
+
+.bct-qr-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px
+}
+
+.bct-qr-info .bct-bank {
+  margin: 8px 0 18px;
+  max-width: 460px
+}
+
+.bct-qr-pay {
+  display: none;
+  margin-right: 10px
+}
+
+.bct-qr-note {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--bct-tint);
+  border-left: 4px solid var(--bct-gold);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 8px 0 16px;
+  max-width: 520px
+}
+
+.bct-qr-note>svg {
+  color: #25d366;
+  font-size: 24px;
+  flex: none;
+  margin-top: 2px
+}
+
+.bct-qr-note p {
+  margin: 0;
+  font-size: .98rem
+}
+
+/* show the "Pay with UPI app" button only on phones/tablets */
+@media (max-width:768px) {
+  .bct-qr-pay {
+    display: inline-block
+  }
+
+  .bct-qr {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px 20px;
+    border-radius: 6px 40px 6px 40px
+  }
+
+  .bct-qr-img {
+    max-width: 300px;
+    margin: 0 auto
+  }
+}
+
+@media (max-width:520px) {
+  .bct-qr {
+    padding: 22px 14px
+  }
+
+  .bct-qr-img {
+    max-width: 260px
+  }
+
+  .bct-qr-info .bct-btn {
+    width: 100%;
+    text-align: center;
+    margin-right: 0
+  }
+}
+
+@media (max-width:320px) {
+  .bct-qr-img {
+    max-width: 220px
+  }
+}
+
 .bct-hero-sub {
   font-size: 1.2rem;
   max-width: 560px;

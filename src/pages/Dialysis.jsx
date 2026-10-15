@@ -26,7 +26,7 @@ export default function Dialysis() {
 
   return (
     <>
-      <PageHero image={img.dialysis} title={d.title} sub={d.sub} />
+      <PageHero image="/assets/new6.jpg" title={d.title} sub={d.sub} />
 
       {/* Stats strip */}
       <section className="bct-dx-stats">

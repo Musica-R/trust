@@ -23,7 +23,7 @@ export default function OldAge() {
 
   return (
     <>
-      <PageHero image={img.oldAge} title={o.title} sub={o.sub} />
+      <PageHero image="/assets/trust18.jpeg" title={o.title} sub={o.sub} />
 
        {/* Our plan */}
       <section className="bct-sec">

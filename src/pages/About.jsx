@@ -14,7 +14,7 @@ export default function About() {
   const q = t.aboutQuote || {};
   return (
     <>
-      <PageHero image={img.about} title={a.title} sub={a.sub} />
+      <PageHero image="/assets/trust16.jpeg" title={a.title} sub={a.sub} />
       <section className="bct-sec">
         <div className="bct-wrap bct-split">
           <div>

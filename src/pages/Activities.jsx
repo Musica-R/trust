@@ -16,7 +16,7 @@ export default function Activities() {
   const q = t.actQuotes || {};
   return (
     <>
-      <PageHero image={img.activities} title={a.title} sub={a.sub} />
+      <PageHero image="/assets/trust15.jpeg" title={a.title} sub={a.sub} />
       <section className="bct-sec">
         <div className="bct-wrap">
           <Stagger className="bct-cards" step={130}>

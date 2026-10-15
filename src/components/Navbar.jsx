@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
-import { FiMenu, FiX, FiGlobe } from "react-icons/fi";
+import { FiMenu, FiX, FiGlobe, FiPhone, FiMail, FiHeart } from "react-icons/fi";
 import { useLang } from "../context/LangContext";
 import "../Stylesheet/Navbar.css";
+
+const PHONE_DISPLAY = "+91 8714 560 216";
+const PHONE_HREF = "tel:+918714560216";
+const EMAIL = "olappamannatrust@gmail.com";
 
 const LINKS = [
   { to: "/", end: true, en: "Home", ml: "ഹോം" },
@@ -24,6 +28,40 @@ const BRAND = {
     sub: "ഏഴക്കാട്, മുണ്ടൂർ, പാലക്കാട്",
   },
 };
+
+/* Text for the donation slider (top bar) */
+const DONATE = {
+  en: {
+    label: "Donate",
+    msg: "Support our Dialysis Centre & Old Age Home — every contribution helps.",
+    call: "Call",
+    mail: "Email",
+  },
+  ml: {
+    label: "സംഭാവന",
+    msg: "ഞങ്ങളുടെ ഡയാലിസിസ് കേന്ദ്രത്തെയും വൃദ്ധസദനത്തെയും സഹായിക്കൂ — ഓരോ സംഭാവനയും വിലപ്പെട്ടതാണ്.",
+    call: "വിളിക്കുക",
+    mail: "ഇമെയിൽ",
+  },
+};
+
+/* One slide of the ticker */
+function TickerItem({ t }) {
+  return (
+    <div className="bct-ticker-item">
+      <span className="bct-ticker-tag">
+        <FiHeart /> {t.label}
+      </span>
+      <span className="bct-ticker-msg">{t.msg}</span>
+      <a href={PHONE_HREF} className="bct-ticker-link">
+        <FiPhone /> {t.call}: {PHONE_DISPLAY}
+      </a>
+      <a href={`mailto:${EMAIL}`} className="bct-ticker-link">
+        <FiMail /> {t.mail}: {EMAIL}
+      </a>
+    </div>
+  );
+}
 
 /* Language is shared through LangContext, so every page switches together.
    LangContext already saves the choice and sets <html lang>. */
@@ -57,9 +95,35 @@ export default function Navbar() {
 
   const toggleLang = () => setLang(lang === "en" ? "ml" : "en");
   const brand = BRAND[lang];
+  const t = DONATE[lang];
 
   return (
     <header className={`bct-nav ${scrolled || open ? "bct-nav-solid" : ""}`}>
+      {/* Top donation bar: sliding ticker + fixed contact links.
+          Always visible, also after scrolling. */}
+      <div className="bct-top">
+        <div className="bct-top-inner">
+          <div className="bct-ticker" aria-label={t.label}>
+            <div className="bct-ticker-track">
+              <TickerItem t={t} />
+              {/* duplicate for a seamless loop */}
+              <div aria-hidden="true" style={{ display: "contents" }}>
+                <TickerItem t={t} />
+              </div>
+            </div>
+          </div>
+
+          <div className="bct-top-contact">
+            <a href={PHONE_HREF}>
+              <FiPhone /> {PHONE_DISPLAY}
+            </a>
+            <a href={`mailto:${EMAIL}`}>
+              <FiMail /> {EMAIL}
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="bct-nav-inner">
         {/* Brand */}
         <Link to="/" className="bct-brand" aria-label={brand.title}>
@@ -98,7 +162,6 @@ export default function Navbar() {
 
         {/* Tools */}
         <div className="bct-nav-tools">
-
           <button
             type="button"
             className="bct-lang"
