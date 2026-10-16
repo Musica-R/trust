@@ -255,6 +255,44 @@
   }
 }
 
+
+/* ---------- 80G tax exemption note ---------- */
+.bct-tax {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #fff8e6;
+  border: 1.5px dashed var(--bct-gold);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 0 0 20px;
+  max-width: 520px
+}
+
+.bct-tax>svg {
+  color: var(--bct-gold);
+  font-size: 22px;
+  flex: none;
+  margin-top: 2px
+}
+
+.bct-tax p {
+  margin: 0;
+  font-size: .97rem;
+  font-weight: 600;
+  color: var(--bct-green);
+  line-height: 1.5
+}
+
+@media (max-width:520px) {
+  .bct-tax {
+    padding: 10px 12px
+  }
+
+  .bct-tax p {
+    font-size: .92rem
+  }
+}
 .bct-hero-sub {
   font-size: 1.2rem;
   max-width: 560px;

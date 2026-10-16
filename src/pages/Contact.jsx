@@ -8,6 +8,7 @@ import {
   FaUniversity,
   FaWhatsapp,
   FaQrcode,
+  FaFileInvoice,
 } from "react-icons/fa";
 import { useLang } from "../context/LangContext";
 import { img } from "../data/images";
@@ -46,6 +47,16 @@ export default function Contact() {
     ["bank", c.bank, b.name],
     ["branch", c.branch, b.branch],
   ];
+
+  // 80G tax exemption note (shown near both donation areas)
+  const taxText =
+    c.tax || "Donations are eligible for tax exemption under Section 80G of the Income Tax Act.";
+  const TaxNote = () => (
+    <div className="bct-tax">
+      <FaFileInvoice />
+      <p>{taxText}</p>
+    </div>
+  );
 
   // WhatsApp number (digits only, with country code)
   let wa = String(trust.whatsapp || trust.phone || "").replace(/\D/g, "");
@@ -98,6 +109,9 @@ export default function Contact() {
           <div>
             <AnimText as="h2" text={c.donTitle} className="bct-h2" step={90} />
             <AnimText text={c.donText} className="bct-lead" step={40} />
+            <Reveal>
+              <TaxNote />
+            </Reveal>
             <Stagger className="bct-bank" step={120}>
               {rows.map(([k, label, val]) => (
                 <div key={k} className="bct-bank-row">
@@ -130,6 +144,8 @@ export default function Contact() {
                 <p className="bct-body">
                   {c.qrText || "Scan the QR code with any UPI app (GPay, PhonePe, Paytm, BHIM) or pay directly to the UPI ID below."}
                 </p>
+
+                <TaxNote />
 
                 <div className="bct-bank">
                   <div className="bct-bank-row">
