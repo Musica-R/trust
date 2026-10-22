@@ -1,0 +1,145 @@
+/* ---------- Trust caption banner + 2022 / 2024 timeline ---------- */
+.bct-cap {
+  position: relative;
+  background: var(--bct-deep);
+  color: #fff;
+  text-align: center;
+  padding: 14px 24px;
+  overflow: hidden;
+  border-top: 3px solid var(--bct-gold);
+  border-bottom: 3px solid var(--bct-gold);
+}
+
+.bct-cap::before,
+.bct-cap::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 1px solid rgba(224, 166, 43, .22);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bct-cap::before { left: -160px; }
+.bct-cap::after { right: -160px; }
+
+.bct-cap-in {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.bct-cap-orn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--bct-gold);
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+}
+
+.bct-cap-orn span {
+  height: 1px;
+  width: clamp(40px, 12vw, 120px);
+  background: linear-gradient(90deg, transparent, var(--bct-gold));
+}
+
+.bct-cap-orn span:last-child {
+  background: linear-gradient(270deg, transparent, var(--bct-gold));
+}
+
+/* main caption line (Malayalam in ml mode, English spelling in en mode) */
+.bct-cap-main {
+  font-family: var(--bct-head);
+  font-size: clamp(1.9rem, 5vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+  color: #f6d77a;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .35);
+}
+
+/* small meaning in brackets */
+.bct-cap-sub {
+  margin: 10px 0 0;
+  font-size: clamp(.9rem, 1.6vw, 1.1rem);
+  font-style: italic;
+  letter-spacing: .04em;
+  color: rgba(255, 255, 255, .85);
+}
+
+/* ---------- timeline ---------- */
+.bct-tl-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  color: var(--bct-green);
+  margin: 0 0 34px;
+}
+
+.bct-tl {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin: 26px 0 30px;
+}
+
+.bct-tl::before {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 30px;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--bct-gold) 0 8px, transparent 8px 14px);
+}
+
+.bct-tl-item {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 58px 20px 22px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(20, 41, 29, .12);
+  border-top: 4px solid var(--bct-gold);
+}
+
+.bct-tl-year {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  background: var(--bct-green);
+  color: #f6d77a;
+  font-family: var(--bct-head);
+  font-weight: 700;
+  font-size: 1.35rem;
+  padding: 8px 22px;
+  border-radius: 999px;
+  border: 3px solid var(--bct-gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+}
+
+.bct-tl-item h3 {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+  color: var(--bct-green);
+}
+
+.bct-tl-item p {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .bct-cap { padding: 34px 16px; }
+  .bct-tl { grid-template-columns: 1fr; gap: 38px; }
+  .bct-tl::before { display: none; }
+}

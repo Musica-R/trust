@@ -19,8 +19,8 @@ export const content = {
     address: "Thiru Kunnappullikkavu, Ezhakkad, Mundur, Palakkad - 678 635",
     nav: { home: "Home", about: "About", activities: "Activities", dialysis: "Dialysis Centre", oldAge: "Old Age Home", gallery: "Gallery", contact: "Contact Us" },
     home: {
-      title: "Let us move forward together and extend a helping hand to the deserving",
-      sub: "Food, medical equipment, dialysis support and care for poor and bedridden patients in Mundur and Kongad, Palakkad.",
+      title: "Serving the needy with devotion",
+      sub: "Olappamanna Bhagavathi Charitable Trust: food, dialysis support and care for the poor and bedridden.",
       donate: "Donate Now", learn: "Our Story",
       impact: [["2022", "Year established"], ["30", "Temples linked to our founder"], ["2", "Panchayats served"], ["₹800", "Monthly food kit"]],
       whatTitle: "How we help",
@@ -124,8 +124,8 @@ export const content = {
     address: "തിരുകുന്നപ്പുള്ളിക്കാവ്, എഴക്കാട്, മുണ്ടൂർ, പാലക്കാട് - 678 635",
     nav: { home: "ഹോം", about: "ഞങ്ങളെക്കുറിച്ച്", activities: "പ്രവർത്തനങ്ങൾ", dialysis: "ഡയാലിസിസ് കേന്ദ്രം", oldAge: "വൃദ്ധസദനം", gallery: "ഗാലറി", contact: "ബന്ധപ്പെടുക" },
     home: {
-      title: "ഒത്തൊരുമയോടെ മുന്നേറാം, അർഹരായവർക്ക് കരുതലും കൈത്താങ്ങുമാകാം.",
-      sub: "പാലക്കാട് മുണ്ടൂർ, കോങ്ങാട് പ്രദേശങ്ങളിലെ നിർധനരും കിടപ്പുരോഗികളുമായവർക്ക് ഭക്ഷണം, വൈദ്യ ഉപകരണങ്ങൾ, ഡയാലിസിസ് സഹായം, പരിചരണം.",
+      title: "ഭക്തിയോടെ നിർധനർക്ക് സേവനം",
+      sub: "ഒളപ്പമണ്ണ ഭഗവതി ചാരിറ്റബിൾ ട്രസ്റ്റ്: നിർധനർക്കും കിടപ്പുരോഗികൾക്കും ഭക്ഷണം, ഡയാലിസിസ് സഹായം, പരിചരണം.",
       donate: "സംഭാവന നൽകൂ", learn: "ഞങ്ങളുടെ കഥ",
       impact: [["2022", "സ്ഥാപിച്ച വർഷം"], ["30", "സ്ഥാപകന് ബന്ധമുള്ള ക്ഷേത്രങ്ങൾ"], ["2", "പഞ്ചായത്തുകൾ"], ["₹800", "പ്രതിമാസ ഭക്ഷ്യക്കിറ്റ്"]],
       whatTitle: "ഞങ്ങൾ എങ്ങനെ സഹായിക്കുന്നു",

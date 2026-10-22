@@ -1,3 +1,211 @@
+/* ---------- hero: goddess (left 40%) + temple (right 60%) ---------- */
+.bct-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--bct-deep)
+}
+
+.bct-hero-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+.bct-hero-bg-l {
+  left: 0;
+  width: 40%;
+  background-position: center top
+}
+
+.bct-hero-bg-r {
+  right: 0;
+  width: 60%;
+  background-position: center
+}
+
+.bct-hero .bct-hero-in {
+  position: relative;
+  z-index: 2;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center
+}
+
+.bct-hero-side {
+  padding: 40px 0
+}
+
+.bct-hero-left {
+  padding-right: 210px;
+  padding-left: 40px;
+  text-align: center
+}
+
+.bct-hero-right {
+  padding-left: 210px;
+  padding-right: 60px;
+  text-align: left
+}
+
+.bct-hero h1,
+.bct-hero-right .bct-hero-sub {
+  text-shadow: none
+}
+
+.bct-hero h1 {
+  margin: 0
+}
+
+.bct-hero-right .bct-hero-sub {
+  margin: 0
+}
+
+/* goddess oval sits exactly on the 40% / 60% split */
+.bct-hero-oval {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  margin: -255px 0 0 -170px;
+  width: 340px;
+  aspect-ratio: 2 / 3;
+  border-radius: 50%;
+  border: 5px solid var(--bct-gold);
+  overflow: hidden;
+  background: var(--bct-deep);
+  box-shadow: none
+}
+
+.bct-hero-oval img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block
+}
+
+@media (max-width:1100px) {
+  .bct-hero-oval {
+    width: 250px;
+    margin: -187px 0 0 -125px
+  }
+
+  .bct-hero-left {
+    padding-right: 150px;
+    padding-left: 24px
+  }
+
+  .bct-hero-right {
+    padding-left: 150px;
+    padding-right: 30px
+  }
+}
+
+@media (max-width:900px) {
+
+  /* mobile: stack  goddess (full image) -> text -> temple (full image) */
+  .bct-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 0;
+    padding: 112px 0 0
+  }
+
+  .bct-hero-bg {
+    position: static;
+    width: 100%;
+    height: auto;
+    background-color: var(--bct-deep);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat
+  }
+
+  /* full goddess image, nothing cropped */
+  .bct-hero-bg-l {
+    order: 1;
+    height: 400px
+  }
+
+  /* full temple image, nothing cropped */
+  .bct-hero-bg-r {
+    order: 3;
+    aspect-ratio: 16 / 9
+  }
+
+  .bct-hero .bct-hero-in {
+    order: 2;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 12px;
+    padding: 22px 0 26px;
+    background: var(--bct-deep)
+  }
+
+  /* centre oval stays hidden on mobile */
+  .bct-hero-oval {
+    display: none
+  }
+
+  .bct-hero-side {
+    padding: 0
+  }
+
+  .bct-hero-left,
+  .bct-hero-right {
+    padding: 0 20px;
+    text-align: center
+  }
+
+  /* smaller fonts */
+  .bct-hero h1 {
+    font-size: 1.5rem;
+    line-height: 1.3
+  }
+
+  .bct-hero-right .bct-hero-sub {
+    font-size: .9rem;
+    line-height: 1.55
+  }
+
+  .bct-hero-right .bct-btns {
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 18px
+  }
+
+  .bct-hero .bct-btn {
+    padding: 10px 20px;
+    font-size: .88rem
+  }
+}
+
+@media (max-width:480px) {
+  .bct-hero-bg-l {
+    height: 340px
+  }
+
+  .bct-hero h1 {
+    font-size: 1.3rem
+  }
+
+  .bct-hero-right .bct-hero-sub {
+    font-size: .85rem
+  }
+
+  .bct-hero .bct-btn {
+    padding: 9px 16px;
+    font-size: .82rem
+  }
+}
+
 /* story collage */
 .bct-story-grid {
   display: grid;

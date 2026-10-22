@@ -7,7 +7,9 @@
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 100;
-  transition: background .35s, box-shadow .35s;
+  /* always solid: no transparent state, before or after scrolling */
+  background: #1f3d2b;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .18);
 }
 
 .bct-nav-solid {

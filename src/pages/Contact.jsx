@@ -17,9 +17,11 @@ import PageHero from "../components/PageHero";
 import { AnimText, Stagger, Reveal } from "../components/Reveal";
 import "../Stylesheet/pages.css";
 
-
 const UPI_ID = trust.upi || "olappamanna187@dlb";
 const UPI_NAME = "Olappamanna Bhagavathy Charitable Trust";
+
+// WhatsApp number (country code + number, digits only) -> +91 87145 60216
+const WA_NUMBER = "918714560216";
 
 export default function Contact() {
   const { t } = useLang();
@@ -28,10 +30,20 @@ export default function Contact() {
   const [copied, setCopied] = useState("");
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
 
+  // Contact form -> opens WhatsApp chat with the filled details
   const send = (e) => {
     e.preventDefault();
-    const body = `${f.msg}\n\n${f.name} (${f.mail})`;
-    window.location.href = `mailto:${trust.email}?subject=${encodeURIComponent(c.title)}&body=${encodeURIComponent(body)}`;
+    const text =
+      `Hello, I would like to contact Olappamanna Bhagavathy Charitable Trust.\n\n` +
+      `*Name:* ${f.name}\n` +
+      `*Email:* ${f.mail}\n` +
+      `*Message:* ${f.msg}`;
+    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+
+    const win = window.open(url, "_blank", "noopener,noreferrer");
+    if (!win) window.location.href = url; // fallback if popup is blocked
+
+    setF({ name: "", mail: "", msg: "" }); // clear the form
   };
 
   const copy = (k, v) => {
@@ -58,13 +70,11 @@ export default function Contact() {
     </div>
   );
 
-  // WhatsApp number (digits only, with country code)
-  let wa = String(trust.whatsapp || trust.phone || "").replace(/\D/g, "");
-  if (wa.length === 10) wa = "91" + wa;
+  // WhatsApp link for sending the donation screenshot
   const waText = encodeURIComponent(
     "Hello, I have made a donation to Olappamanna Bhagavathy Charitable Trust. Sharing the payment screenshot."
   );
-  const waLink = `https://wa.me/${wa}?text=${waText}`;
+  const waLink = `https://wa.me/${WA_NUMBER}?text=${waText}`;
 
   // Opens the UPI app directly on mobile
   const upiLink = `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(UPI_NAME)}&cu=INR`;
@@ -102,7 +112,10 @@ export default function Contact() {
               <input required placeholder={c.name} value={f.name} onChange={set("name")} />
               <input required type="email" placeholder={c.mail} value={f.mail} onChange={set("mail")} />
               <textarea required rows="5" placeholder={c.msg} value={f.msg} onChange={set("msg")} />
-              <button className="bct-btn bct-btn-green" type="submit">{c.send}</button>
+              <button className="bct-btn bct-btn-green" type="submit">
+                <FaWhatsapp style={{ marginRight: 8, verticalAlign: "-2px" }} />
+                {c.send}
+              </button>
             </form>
           </Reveal>
 

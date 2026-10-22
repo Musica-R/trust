@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome, FaArrowRight, FaWind, FaBed, FaProcedures, FaWalking, FaLeaf, FaQuoteLeft, FaChevronLeft, FaChevronRight, FaCheckCircle, FaPlaceOfWorship, FaHandHoldingHeart, FaPrayingHands, FaCompass, FaUsers, FaCalendarAlt } from "react-icons/fa";
+import { FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome, FaArrowRight, FaWind, FaBed, FaProcedures, FaWalking, FaLeaf, FaQuoteLeft, FaChevronLeft, FaChevronRight, FaCheckCircle, FaPlaceOfWorship, FaHandHoldingHeart, FaPrayingHands, FaCompass, FaUsers, FaCalendarAlt, FaLandmark } from "react-icons/fa";
 import { useLang } from "../context/LangContext";
 import { img, helpImgs, homeGallery } from "../data/images";
 import { trust } from "../data/content";
@@ -8,12 +8,69 @@ import Trustees from "../components/Trustees";
 import { AnimText, Stagger, Reveal } from "../components/Reveal";
 import "../Stylesheet/pages.css";
 import "../Stylesheet/home.css";
+import "../Stylesheet/caption.css";
 
 const icons = [FaUtensils, FaWheelchair, FaBus, FaClinicMedical, FaTint, FaHome];
 const eqIcons = [FaWind, FaWheelchair, FaBed, FaProcedures, FaTint, FaWalking];
 const shrineIcons = [FaPrayingHands, FaCompass, FaUsers];
 const rupee = (n) => "₹" + n.toLocaleString("en-IN");
 const pad = (n) => String(n).padStart(2, "0");
+
+/* ---------- Trust caption + milestones (client request) ---------- */
+const caption = {
+  en: { main: "Sahajeevanam Kshethrangaliloode", sub: "(Coexistence through Temples)" },
+  ml: { main: "സഹജീവനം ക്ഷേത്രങ്ങളിലൂടെ", sub: "(ക്ഷേത്രങ്ങളിലൂടെ സഹവർത്തിത്വം)" },
+};
+
+const timeline = {
+  en: {
+    title: "Our Journey",
+    items: [
+      ["2022", "Trust Established", "Registered as No. 357/4/2022 at Thiru Kunnappullikkavu, Ezhakkad."],
+      ["2024", "Trust Building Inauguration", "The new Olappamanna Charitable Trust building was inaugurated."],
+    ],
+  },
+  ml: {
+    title: "ഞങ്ങളുടെ യാത്ര",
+    items: [
+      ["2022", "ട്രസ്റ്റ് സ്ഥാപിതമായി", "എഴക്കാട് തിരുകുന്നപ്പുള്ളിക്കാവിൽ രജിസ്ട്രേഷൻ നമ്പർ 357/4/2022 ആയി സ്ഥാപിതം."],
+      ["2024", "ട്രസ്റ്റ് കെട്ടിട ഉദ്ഘാടനം", "ഒളപ്പമണ്ണ ചാരിറ്റബിൾ ട്രസ്റ്റിന്റെ പുതിയ കെട്ടിടത്തിന്റെ ഉദ്ഘാടനം."],
+    ],
+  },
+};
+
+/* Full-width highlighted trust caption (styles in Stylesheet/caption.css) */
+function CaptionBanner({ lang }) {
+  const c = caption[lang] || caption.en;
+  return (
+    <section className="bct-cap" aria-label={`${c.main} ${c.sub}`}>
+      <Reveal key={`cap-${lang}`} className="bct-cap-in">
+        <div className="bct-cap-orn" aria-hidden="true"><span /><FaPlaceOfWorship /><span /></div>
+        <h2 className="bct-cap-main">{c.main}</h2>
+        <p className="bct-cap-sub">{c.sub}</p>
+      </Reveal>
+    </section>
+  );
+}
+
+/* 2022 -> 2024 milestone cards */
+function Timeline({ lang }) {
+  const tl = timeline[lang] || timeline.en;
+  return (
+    <div>
+      <h3 className="bct-tl-title"><FaLandmark /> {tl.title}</h3>
+      <Stagger key={`tl-${lang}`} className="bct-tl" step={250} from="bottom">
+        {tl.items.map(([year, label, text]) => (
+          <article key={year} className="bct-tl-item">
+            <span className="bct-tl-year">{year}</span>
+            <h3>{label}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </Stagger>
+    </div>
+  );
+}
 
 const prefersReduced = () =>
   typeof window !== "undefined" &&
@@ -261,16 +318,33 @@ export default function Home() {
 
   return (
     <>
-      <section className="bct-hero" style={{ backgroundImage: `linear-gradient(105deg,rgba(20,41,29,.9),rgba(20,41,29,.45)),url(${"/assets/new5.jpg"})` }}>
+
+
+      <section className="bct-hero">
+        <div className="bct-hero-bg bct-hero-bg-l" style={{ backgroundImage: "url(/assets/cnew3.jpeg)" }} />
+        <div className="bct-hero-bg bct-hero-bg-r" style={{ backgroundImage: "url(/assets/cnew4.jpeg)" }} />
+
         <div className="bct-wrap bct-hero-in">
-          <AnimText key={`t-${lang}`} as="h1" text={h.title} step={110} />
-          <AnimText key={`s-${lang}`} text={h.sub} className="bct-hero-sub" step={45} />
-          <Reveal delay={600} className="bct-btns">
-            <Link to="/contact" className="bct-btn bct-btn-gold">{h.donate}</Link>
-            <Link to="/about" className="bct-btn bct-btn-line">{h.learn}</Link>
+          <div className="bct-hero-side bct-hero-left">
+            <AnimText key={`t-${lang}`} as="h1" text={h.title} step={110} />
+          </div>
+
+          <Reveal delay={200} className="bct-hero-oval">
+            <img src="/assets/cnew3.jpeg" alt="" />
           </Reveal>
+
+          <div className="bct-hero-side bct-hero-right">
+            <AnimText key={`s-${lang}`} text={h.sub} className="bct-hero-sub" step={45} />
+            <Reveal delay={600} className="bct-btns">
+              <Link to="/contact" className="bct-btn bct-btn-gold">{h.donate}</Link>
+              <Link to="/about" className="bct-btn bct-btn-line">{h.learn}</Link>
+            </Reveal>
+          </div>
         </div>
       </section>
+
+      {/* Trust caption: Sahajeevanam Kshethrangaliloode */}
+      <CaptionBanner lang={lang} />
 
       {/* <section className="bct-impact">
         <Stagger key={`i-${lang}`} className="bct-impact-grid" step={200}>
@@ -291,6 +365,10 @@ export default function Home() {
           <div>
             <AnimText key={`st-${lang}`} as="h2" text={t.story.title} className="bct-h2" step={90} />
             <AnimText key={`sx-${lang}`} text={t.story.text} className="bct-body" step={30} />
+
+            {/* Established 2022 / Building inauguration 2024 */}
+            <Timeline lang={lang} />
+
             <Stagger key={`sp-${lang}`} className="bct-story-pts" step={160}>
               {t.story.points.map((p) => <p key={p}><FaLeaf /> {p}</p>)}
             </Stagger>

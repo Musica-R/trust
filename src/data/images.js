@@ -1,9 +1,12 @@
 // Unsplash images: swap any ID here to change a picture site-wide
 const u = (id, w = 1400) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=70`;
 
-// Local trust photos for the gallery: /public/assets/trust1.jpeg to trust25.jpeg
+// Local trust photos for the gallery: /public/assets/trust1.jpeg to trust24.jpeg
 const GALLERY_COUNT = 24;
 const trust = (n) => `/assets/trust${n}.jpeg`;
+
+// Extra gallery photos: /public/assets/cnew1.jpeg, cnew2.jpeg
+const EXTRA_GALLERY = ["/assets/cnew1.jpeg", "/assets/cnew2.jpeg"];
 
 export const img = {
   hero: u("1488521787991-ed7bbaae773c", 1800),
@@ -31,11 +34,11 @@ export const helpImgs = helpNames.map((name) =>
   name.includes(".") ? `/assets/${name}` : `/assets/${name}.${HELP_EXT}`
 );
 
-export const gallery = Array.from(
-  { length: GALLERY_COUNT },
-  (_, i) => trust(i + 1)
-);
-
+// trust1..trust24 first, then cnew1 and cnew2 at the end
+export const gallery = [
+  ...Array.from({ length: GALLERY_COUNT }, (_, i) => trust(i + 1)),
+  ...EXTRA_GALLERY,
+];
 
 const HOME_GALLERY_NUMBERS = [12, 6, 10, 14, 19];
 
