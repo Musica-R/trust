@@ -9,8 +9,7 @@ export const oldMore = {
     forText: "Some elders have no one to look after them. We intend to set up an old age home at a suitable location to care for them, for the elders of Mundur, Kongad and the surrounding areas.",
     forPoints: [
       "Elders who have no one to look after them",
-      "Mundur, Kongad and the surrounding areas",
-      "A home at a suitable location",
+      "Mundur, Kongad and the surrounding areas"
     ],
     giftTitle: "A first step: land and a house",
     giftText: "Smt. Saraswathi Amma of Puthuriyaram has donated four cents of land and a 900 sq ft concrete house for the trust's future activities, after her lifetime.",
@@ -34,14 +33,13 @@ export const oldMore = {
       ["2", "ഞങ്ങൾ സേവിക്കുന്ന പഞ്ചായത്തുകൾ: മുണ്ടൂർ, കോങ്ങാട്"],
     ],
     forTitle: "ആർക്കുവേണ്ടിയാണ് ഈ സദനം",
-    forText: "നോക്കാൻ ആരുമില്ലാത്ത വയോജനങ്ങളുണ്ട്. മുണ്ടൂർ, കോങ്ങാട്, പരിസര പ്രദേശങ്ങളിലെ അവരെ പരിചരിക്കാൻ അനുയോജ്യമായ സ്ഥലത്ത് വൃദ്ധസദനം സ്ഥാപിക്കാൻ ഞങ്ങൾ ഉദ്ദേശിക്കുന്നു.",
+    forText: "സംരക്ഷിക്കാൻ ആരുമില്ലാത്ത വയോജനങ്ങളുണ്ട്. മുണ്ടൂർ, കോങ്ങാട്, പരിസര പ്രദേശങ്ങളിലെ അവരെ പരിചരിക്കാൻ അനുയോജ്യമായ സ്ഥലത്ത് വൃദ്ധസദനം സ്ഥാപിക്കാൻ ഞങ്ങൾ ഉദ്ദേശിക്കുന്നു.",
     forPoints: [
-      "നോക്കാൻ ആരുമില്ലാത്ത വയോജനങ്ങൾ",
+      "സംരക്ഷിക്കാൻ ആരുമില്ലാത്ത വയോജനങ്ങൾ",
       "മുണ്ടൂർ, കോങ്ങാട്, പരിസര പ്രദേശങ്ങൾ",
-      "അനുയോജ്യമായ സ്ഥലത്ത് ഒരു സദനം",
     ],
     giftTitle: "ആദ്യ ചുവട്: ഭൂമിയും വീടും",
-    giftText: "പുതുരിയാരത്തെ ശ്രീമതി സരസ്വതി അമ്മ ട്രസ്റ്റിന്റെ ഭാവി പ്രവർത്തനങ്ങൾക്കായി നാല് സെന്റ് ഭൂമിയും 900 ചതുരശ്ര അടി കോൺക്രീറ്റ് വീടും തന്റെ കാലശേഷം നൽകാമെന്ന് സംഭാവന ചെയ്തു.",
+    giftText: "പുതുപ്പരിയാരത്തെ ശ്രീമതി സരസ്വതി അമ്മ, ട്രസ്റ്റിന്റെ ഭാവി പ്രവർത്തനങ്ങൾക്കായി തന്റെ കാലശേഷം നാല് സെന്റ് ഭൂമിയും 900 ചതുരശ്ര അടി കോൺക്രീറ്റ് വീടും നൽകുമെന്ന് അറിയിച്ചു.",
     giftNote: "ഈ സംഭാവന അവരുടെ കാലശേഷമാണ് പ്രാബല്യത്തിൽ വരുന്നത്.",
     roadTitle: "ഞങ്ങളുടെ പദ്ധതി",
     road: [
