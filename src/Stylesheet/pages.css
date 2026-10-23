@@ -214,6 +214,14 @@
   font-size: .98rem
 }
 
+.bct-aq-by {
+  margin: 14px 0 0;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+
 /* show the "Pay with UPI app" button only on phones/tablets */
 @media (max-width:768px) {
   .bct-qr-pay {

@@ -18,6 +18,16 @@ export const content = {
     reg: "Reg. No.",
     address: "Thiru Kunnappullikkavu, Ezhakkad, Mundur, Palakkad - 678 635",
     nav: { home: "Home", about: "About", activities: "Activities", dialysis: "Dialysis Unit.", oldAge: "Old Age Home", gallery: "Gallery", contact: "Contact Us" },
+    foot: {
+      name1: "Olappamanna Bhagavathi",
+      name2: "Charitable Trust",
+      quick: "Quick Links",
+      contact: "Contact & Location",
+      kind1: "Your kindness can",
+      kind2: "change a life",
+      cta: "Support Our Mission",
+      dev: "Developed by",
+    },
     home: {
       title: "Serving the needy with devotion",
       sub: "Olappamanna Bhagavathi Charitable Trust: food, dialysis support and care for the poor and bedridden.",
@@ -59,7 +69,8 @@ export const content = {
       ],
     },
     aboutQuote: {
-      text: "True charity is giving as a duty, without expecting anything in return.",
+      text: "It's not how much we give but how much love we put into giving.",
+      author: "Mother Teresa",
     },
     about: {
       title: "About the Trust",
@@ -74,7 +85,10 @@ export const content = {
       thanks: "We sincerely thank everyone who has helped us, and we ask kind-hearted people to keep offering their support, cooperation and suggestions.",
     },
     actQuotes: {
-      first: "A little kindness can change someone’s entire world.",
+      first: {
+        text: "The purpose of human life is to serve, and to show compassion and the will to help others.",
+        author: "Albert Schweitzer",
+      },
       second: "The whole world is one family.",
     },
     act: {
@@ -123,6 +137,16 @@ export const content = {
     reg: "രജി. നമ്പർ",
     address: "തിരുകുന്നപ്പുള്ളിക്കാവ്, എഴക്കാട്, മുണ്ടൂർ, പാലക്കാട് - 678 635",
     nav: { home: "ഹോം", about: "ഞങ്ങളെക്കുറിച്ച്", activities: "പ്രവർത്തനങ്ങൾ", dialysis: "ഡയാലിസിസ് പദ്ധതി", oldAge: "വൃദ്ധസദനം", gallery: "ഗാലറി", contact: "ബന്ധപ്പെടുക" },
+    foot: {
+      name1: "ഒളപ്പമണ്ണ ഭഗവതി",
+      name2: "ചാരിറ്റബിൾ ട്രസ്റ്റ്",
+      quick: "ക്വിക്ക് ലിങ്കുകൾ",
+      contact: "ബന്ധപ്പെടാൻ",
+      kind1: "നിങ്ങളുടെ കരുണയ്ക്ക്",
+      kind2: "ഒരു ജീവിതം മാറ്റാം",
+      cta: "ഞങ്ങളുടെ ദൗത്യത്തെ പിന്തുണയ്ക്കൂ",
+      dev: "വികസിപ്പിച്ചത്",
+    },
     home: {
       title: "ഭക്തിയോടെ നിർധനർക്ക് സേവനം",
       sub: "ഒളപ്പമണ്ണ ഭഗവതി ചാരിറ്റബിൾ ട്രസ്റ്റ്: നിർധനർക്കും കിടപ്പുരോഗികൾക്കും ഭക്ഷണം, ഡയാലിസിസ് സഹായം, പരിചരണം.",
@@ -164,7 +188,8 @@ export const content = {
       ],
     },
     aboutQuote: {
-      text: "പ്രതിഫലമൊന്നും പ്രതീക്ഷിക്കാതെ, കടമയെന്ന ബോധത്തോടെ നൽകുന്നതാണ് യഥാർത്ഥ ദാനം.",
+      text: "നാം എത്ര നൽകുന്നു എന്നതല്ല, നൽകുന്നതിൽ എത്രമാത്രം സ്നേഹം ചേർക്കുന്നു എന്നതാണ് പ്രധാനം.",
+      author: "മദർ തെരേസ",
     },
     about: {
       title: "ട്രസ്റ്റിനെക്കുറിച്ച്",
@@ -179,7 +204,10 @@ export const content = {
       thanks: "ഞങ്ങളെ സഹായിച്ച എല്ലാവരോടും ആത്മാർഥമായി നന്ദി പറയുന്നു. സന്മനസ്സുള്ളവർ തുടർന്നും പിന്തുണയും സഹകരണവും നിർദേശങ്ങളും നൽകണമെന്ന് അഭ്യർഥിക്കുന്നു.",
     },
     actQuotes: {
-      first: "ഒരു ചെറിയ കാരുണ്യപ്രവൃത്തി ഒരാളുടെ ലോകം മുഴുവൻ മാറ്റിമറിച്ചേക്കാം.",
+      first: {
+        text: "സേവിക്കുകയും കരുണ കാണിക്കുകയും മറ്റുള്ളവരെ സഹായിക്കാനുള്ള മനസ്സ് പുലർത്തുകയും ചെയ്യുക എന്നതാണ് മനുഷ്യജീവിതത്തിന്റെ ലക്ഷ്യം.",
+        author: "ആൽബർട്ട് ഷ്വൈറ്റ്സർ",
+      },
       second: "ലോകം മുഴുവൻ ഒരു കുടുംബമാണ്.",
     },
     act: {

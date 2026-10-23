@@ -33,13 +33,14 @@ export default function Activities() {
         </div>
       </section>
 
-      {/* Highlight quote 1: A little kindness */}
-      {q.first && (
+      {/* Highlight quote 1: Albert Schweitzer */}
+      {q.first && q.first.text && (
         <section className="bct-aq">
           <div className="bct-wrap">
             <Reveal className="bct-aq-card">
               <span className="bct-aq-badge"><FaQuoteLeft /></span>
-              <AnimText key={`aq1-${lang}`} text={q.first} className="bct-aq-text" step={45} />
+              <AnimText key={`aq1-${lang}`} text={q.first.text} className="bct-aq-text" step={45} />
+              {q.first.author && <p className="bct-aq-by">— {q.first.author}</p>}
               <div className="bct-aq-divider" aria-hidden="true">
                 <span /><FaHandHoldingHeart /><span />
               </div>
@@ -75,7 +76,7 @@ export default function Activities() {
       </section>
 
       {/* Highlight quote 2: One family */}
-      {q.second && (
+      {/* {q.second && (
         <section className="bct-aq bct-aq-b">
           <div className="bct-wrap">
             <Reveal className="bct-aq-card">
@@ -88,7 +89,7 @@ export default function Activities() {
             </Reveal>
           </div>
         </section>
-      )}
+      )} */}
     </>
   );
 }

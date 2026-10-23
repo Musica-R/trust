@@ -90,13 +90,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* Highlight quote: True charity */}
+      {/* Highlight quote: Mother Teresa */}
       {q.text && (
         <section className="bct-aq">
           <div className="bct-wrap">
             <Reveal className="bct-aq-card">
               <span className="bct-aq-badge"><FaQuoteLeft /></span>
               <AnimText key={`aq-${lang}`} text={q.text} className="bct-aq-text" step={45} />
+              {q.author && <p className="bct-aq-by">— {q.author}</p>}
               <div className="bct-aq-divider" aria-hidden="true">
                 <span /><FaHandHoldingHeart /><span />
               </div>
