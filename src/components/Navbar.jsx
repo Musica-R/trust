@@ -12,7 +12,7 @@ const LINKS = [
   { to: "/", end: true, en: "Home", ml: "ഹോം" },
   { to: "/about", en: "About", ml: "ഞങ്ങളെക്കുറിച്ച്" },
   { to: "/activities", en: "Activities", ml: "പ്രവർത്തനങ്ങൾ" },
-  { to: "/dialysis-centre", en: "Dialysis Unit", ml: "ഡയാലിസിസ് കേന്ദ്രം" },
+  { to: "/dialysis-centre", en: "Dialysis Unit", ml: "ഡയാലിസിസ് യൂണിറ്റ്" },
   { to: "/old-age-home", en: "Old Age Home", ml: "വൃദ്ധസദനം" },
   { to: "/gallery", en: "Gallery", ml: "ഗാലറി" },
   { to: "/contact", en: "Contact Us", ml: "ബന്ധപ്പെടുക" },

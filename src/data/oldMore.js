@@ -12,7 +12,7 @@ export const oldMore = {
       "Mundur, Kongad and the surrounding areas"
     ],
     giftTitle: "A first step: land and a house",
-    giftText: "Smt. Saraswathi Amma of Puthuriyaram has donated four cents of land and a 900 sq ft concrete house for the trust's future activities, after her lifetime.",
+    giftText: "Smt. Saraswathi Amma of Puthuppariyaram has donated four cents of land and a 900 sq ft concrete house for the trust's future activities, after her lifetime.",
     giftNote: "The gift takes effect after her lifetime.",
     roadTitle: "Our plan",
     road: [
