@@ -6,7 +6,7 @@ const GALLERY_COUNT = 24;
 const trust = (n) => `/assets/trust${n}.jpeg`;
 
 // Extra gallery photos: /public/assets/cnew1.jpeg, cnew2.jpeg
-const EXTRA_GALLERY = ["/assets/cnew1.jpeg", "/assets/cnew2.jpeg"];
+const EXTRA_GALLERY = ["/assets/cnew1.jpeg", "/assets/cnew2.jpeg" , "/assets/pic2.jpeg"];
 
 export const img = {
   hero: u("1488521787991-ed7bbaae773c", 1800),

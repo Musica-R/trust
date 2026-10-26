@@ -6,12 +6,23 @@ import PageHero from "../components/PageHero";
 import { Stagger } from "../components/Reveal";
 import "../Stylesheet/pages.css";
 
-// Videos in /public/assets/videov1.mp4 ... videov4.mp4
+// Existing videos: /public/assets/trustv1.mp4 ... trustv4.mp4
 const VIDEO_COUNT = 4;
-const videos = Array.from(
+
+const trustVideos = Array.from(
   { length: VIDEO_COUNT },
   (_, i) => `/assets/trustv${i + 1}.mp4`
 );
+
+// New videos
+const newVideos = [
+  "/assets/picvideo1.mp4",
+  "/assets/picvideo3.mp4",
+  "/assets/picvideo4.mp4",
+];
+
+// Final list shown on the page (4 + 3 = 7 videos)
+const videos = [...trustVideos, ...newVideos];
 
 export default function Gallery() {
   const { t } = useLang();
@@ -68,7 +79,6 @@ export default function Gallery() {
           </Stagger>
         </div>
       </section>
-
 
       {/* ---------- Videos ---------- */}
       <section className="bct-sec bct-vid-sec">
